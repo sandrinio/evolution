@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/myStyle/myStyle.css" type="text/css">
+
+    <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/bs-rating.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Select-Boxes CSS -->
+    <link rel="stylesheet" href="../../css/select-boxes.css" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Shops Evolution</title>
+
+</head>
+
+<body class="stretched side-header open-header close-header-on-scroll device-lg">
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Header
+    ============================================= -->
+    <div id="header-trigger">
+        <i class="icon-line-menu"></i>
+        <i class="icon-line-cross"></i>
+    </div>
+    <header id="header" class="no-sticky">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo">
+                <a href="/home" class="standard-logo" data-dark-logo="../../images/geocell-logo.png">
+                    <img src="../../images/geocell-logo.png">
+                </a>
+                <a href="/home" class="retina-logo" data-dark-logo="../../images/geocell-logo.png">
+                    <img src="../../images/geocell-logo.png" >
+                </a>
+                </div>
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu">
+
+                    <ul>
+                        <li><a href="/home"><div>მთავარი</div></a></li>
+
+                        <li><a href="/evolution"><div>შეფასება</div></a></li>
+                        <li><a href="#"><div><em><%= currentUser.fullname %></em></div></a></li>
+                    </ul>
+
+
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </div>
+
+    </header><!-- #header end -->
+
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap">
+          <div class="section">
+
+            <div class="container clearfix">
+                <form action="/evolution" method="post">
+                        <div class="col-md-12">
+                            <div class="top-white-section">
+                                <div class="center">
+                                    <h4>ვაფასებ:</h4>
+                                    <select name="evaluated" class="select-1 form-control">
+                                        <% users.forEach(function(user){ %>
+                                        <option><%= user.fullname %></option>
+                                        <% }); %>
+                                    </select>
+                                    <p id="totalScore"><strong><em></em></strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6 bottommargin-sm">
+                        <div class="white-section">
+                            <div>
+                                <h4>კომპეტენცია</h4>
+                                <span class="pull-right" id="cScore"></span>
+                            </div>
+                            <label>კომპანიის პროდუქტების ცოდნა</label>
+                            <input id="input-c1" name="competency[c1]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>სამუშაო პროცედურების ცოდნა</label>
+                            <input id="input-c2" name="competency[c2]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>სამუშაო პროგრამების ცოდნა/გამოყენება</label>
+                            <input id="input-c3" name="competency[c3]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>ტექნოლოგიური სიახლეების ცოდნა</label>
+                            <input id="input-c4" name="competency[c4]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <h4>კომენტარი</h4>
+                            <textarea name="competency[cComment]" rows="10"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 bottommargin-sm">
+                        <div class="white-section">
+                        <div>
+                            <h4>მომსახურების ხარისხი</h4>
+                            <span class="pull-right" id="sScore"></span>
+                        </div>
+                            <label>გაყიდვებზე ორიენტირებულობა</label>
+                            <input id="input-11" name="service[s1]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>აბონენტის მომსმენის და მისი სჭირობების ინდენტიფიცირების უნარი</label>
+                            <input id="input-11" name="service[s2]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>აბონენტისთვის ამომწურავი ინფორმაციის გადაცემა</label>
+                            <input id="input-11" name="service[s3]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>პრობლემის მოგვარების უნარი</label>
+                            <input id="input-11" name="service[s4]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <h4>კომენტარი</h4>
+                            <textarea name="service[sComment]" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 bottommargin-sm">
+                        <div class="white-section">
+                        <div>
+                            <h4>დისციპლინა და სტანდარტები</h4>
+                            <span class="pull-right" id="dScore"></span>
+                        </div>
+                            <label>სამუშაოზე დროული გამოცხადება</label>
+                            <input id="input-11" name="discipline[d1]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>პირადი ჰიგიენის დაცვა</label>
+                            <input id="input-11" name="discipline[d2]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>სტანდარტის შესაბამისი იერსახის დაცვა</label>
+                            <input id="input-11" name="discipline[d3]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+
+                            <h4>კომენტარი</h4>
+                            <textarea name="discipline[dComment]" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 bottommargin-sm">
+                        <div class="white-section">
+                        <div>
+                            <h4>სხვა</h4>
+                            <span class="pull-right" id="oScore"></span>
+                        </div>
+                            <label>კონფლიქტური სიტუაციების მართვა</label>
+                            <input id="input-11" name="other[o1]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>სტრესულ სიტუაციაში მუშაობის უნარი</label>
+                            <input id="input-11" name="other[o2]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>გუნდურობა</label>
+                            <input id="input-11" name="other[o3]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>დროის მართვა</label>
+                            <input id="input-11" name="other[o4]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>თვითგანვითარების უნარი</label>
+                            <input id="input-11" name="other[o5]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <br>
+                            <br>
+                            <label>პერსონალის მართვის უნარი (ფასედბა მხოლოდ სუპერვაიზორი და უფროსი კონსულტანტი)</label>
+                            <input id="input-11" name="other[o6]" type="number" class="rating"
+                                   max="5" data-step="1" data-glyphicon="false"
+                                   data-rating-class="fontawesome-icon">
+                            <h4>კომენტარი</h4>
+                            <textarea name="other[oComment]" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <button class="button button-3d button-rounded button-purple pull-right" type="submit">Submit</button>
+                </form>
+
+
+            </div>
+
+
+
+          </div>
+        </div>
+
+    </section><!-- #content end -->
+
+    <!-- Footer
+    ============================================= -->
+    <footer id="footer" class="dark">
+
+
+
+        <!-- Copyrights
+        ============================================= -->
+        <div id="copyrights">
+
+            <div class="container clearfix">
+
+                <div class="col_half">
+                    Copyrights &copy; 2014 All Rights Reserved by Sula Inc.<br>
+                    <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                </div>
+
+                <div class="clear"></div>
+
+        </div>
+
+</div><!-- #copyrights end -->
+
+</footer><!-- #footer end -->
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/plugins.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="../../js/functions.js"></script>
+<script type="text/javascript" src="../../js/star-rating.js"></script>
+<script type="text/javascript" src="../../js/myJs.js"></script>
+<!-- Select-Boxes Plugin -->
+<script type="text/javascript" src="../../js/select-boxes.js"></script>
+
+<!-- Select-Splitter Plugin -->
+<script type="text/javascript" src="../../js/selectsplitter.js"></script>
+
+<script type="text/javascript">
+  jQuery(document).ready( function($){
+
+    // Multiple Select
+    $(".select-1").select2({
+      placeholder: "Select Multiple Values"
+    });
+
+    // Loading array data
+    var data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
+    $(".select-data-array").select2({
+      data: data
+    })
+    $(".select-data-array-selected").select2({
+      data: data
+    });
+
+    // Enabled/Disabled
+    $(".select-disabled").select2();
+    $(".select-enable").on("click", function () {
+      $(".select-disabled").prop("disabled", false);
+      $(".select-disabled-multi").prop("disabled", false);
+    });
+    $(".select-disable").on("click", function () {
+      $(".select-disabled").prop("disabled", true);
+      $(".select-disabled-multi").prop("disabled", true);
+    });
+
+    // Without Search
+    $(".select-hide").select2({
+      minimumResultsForSearch: Infinity
+    });
+
+    // select Tags
+    $(".select-tags").select2({
+      tags: true
+    });
+
+    // Select Splitter
+    $('.selectsplitter').selectsplitter();
+
+  });
+</script>
+
+
+</body>
+</html>

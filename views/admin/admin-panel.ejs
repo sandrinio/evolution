@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/myStyle/myStyle.css" type="text/css">
+
+    <!-- Bootstrap Data Table Plugin -->
+    <link rel="stylesheet" href="../../css/bs-datatable.css" type="text/css" />
+
+    <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Shops Evolution</title>
+
+</head>
+
+<body class="stretched side-header open-header close-header-on-scroll device-lg">
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Header
+    ============================================= -->
+    <div id="header-trigger">
+        <i class="icon-line-menu"></i>
+        <i class="icon-line-cross"></i>
+    </div>
+    <header id="header" class="no-sticky">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo">
+                    <a href="/home" class="standard-logo" data-dark-logo="../../images/geocell-logo.png">
+                        <img src="../../images/geocell-logo.png">
+                    </a>
+                    <a href="/home" class="retina-logo" data-dark-logo="../../images/geocell-logo.png">
+                        <img src="../../images/geocell-logo.png" >
+                    </a>
+                </div>
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu">
+
+                    <ul>
+                        <% if(currentUser.permission === 'Admin'){ %>
+                        <li><a href="/register"><div>რეგისტრაცია</div></a></li>
+                        <li><a href="/admin-panel"><div>ადმინ</div></a></li>
+                        <% } %>
+                        <li><a href="/home"><div>მთავარი</div></a></li>
+                        <li><a href="/evolution"><div>შეფასება</div></a></li>
+                        <li><a href="#"><div><em><%= currentUser.fullname %></em></div></a></li>
+                    </ul>
+
+
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </div>
+
+    </header><!-- #header end -->
+
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <div class="container clearfix">
+                <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Phone</th>
+                        <th>Birthday</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Phone</th>
+                        <th>Birthday</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <% users.forEach(function(user){  %>
+                    <tr>
+                        <td><%= user.fullname %></td>
+                        <td><%= user.position %></td>
+                        <td><%= user.tel %></td>
+                        <td><%= user.bday %></td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+
+            </div>
+
+            </div>
+    </section>
+        </div>
+
+    </section><!-- #content end -->
+
+    <!-- Footer
+    ============================================= -->
+</div>
+<footer id="footer" class="dark">
+
+
+
+    <!-- Copyrights
+    ============================================= -->
+    <div id="copyrights">
+
+        <div class="container clearfix">
+
+            <div class="col_half">
+                Copyrights &copy; 2014 All Rights Reserved by Sula Inc.<br>
+                <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+
+    </div><!-- #copyrights end -->
+
+
+</footer><!-- #footer end -->
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/plugins.js"></script>
+<!-- Bootstrap Data Table Plugin -->
+<script type="text/javascript" src="../../js/bs-datatable.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="../../js/functions.js"></script>
+<script type="text/javascript" src="../../js/myJs.js"></script>
+<script>
+
+  $(document).ready(function() {
+    $('#datatable1').DataTable();
+  });
+
+</script>
+
+</body>
+</html>
