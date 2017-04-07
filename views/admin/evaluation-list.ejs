@@ -37,8 +37,7 @@
 
     <!-- Header
     ============================================= -->
-    </div>
-        <header id="header" class="full-header">
+    <header id="header" class="full-header">
 
         <div id="header-wrap">
 
@@ -49,12 +48,12 @@
                 <!-- Logo
                 ============================================= -->
                 <!--<div id="logo">-->
-                    <!--<a href="/home" class="standard-logo" data-dark-logo="../../images/geocell-logo.png">-->
-                        <!--<img src="../../images/geocell-logo.png">-->
-                    <!--</a>-->
-                    <!--<a href="/home" class="retina-logo" data-dark-logo="../../images/geocell-logo.png">-->
-                        <!--<img src="../../images/geocell-logo.png" >-->
-                    <!--</a>-->
+                <!--<a href="/home" class="standard-logo" data-dark-logo="../../images/geocell-logo.png">-->
+                <!--<img src="../../images/geocell-logo.png">-->
+                <!--</a>-->
+                <!--<a href="/home" class="retina-logo" data-dark-logo="../../images/geocell-logo.png">-->
+                <!--<img src="../../images/geocell-logo.png" >-->
+                <!--</a>-->
                 <!--</div>-->
 
                 <!-- Primary Navigation
@@ -62,10 +61,10 @@
                 <nav id="primary-menu" class="style-3">
 
                     <ul class="sf-js-enabled" style="touch-action: pan-y;">
-                        <li class="current"><a href="/home"><div>მთავარი</div></a></li>
+                        <li><a href="/home"><div>მთავარი</div></a></li>
                         <% if(currentUser != undefined && currentUser.permission === 'Admin'){ %>
                         <li><a href="/register"><div>რეგისტრაცია</div></a></li>
-                        <li><a href="/admin-panel"><div>ადმინ</div></a></li>
+                        <li class="current"><a href="/admin-panel"><div>ადმინ</div></a></li>
                         <% } %>
                         <li><a href="/evolution"><div>შეფასება</div></a></li>
                         <% if(currentUser != undefined) { %>
@@ -83,16 +82,20 @@
 
     </header><!-- #header end -->
 
-        <!-- Page Title
-                ============================================= -->
-        <section id="page-title" class="page-title-pattern">
+                <!-- Page Title
+               ============================================= -->
+    <section id="page-title" class="page-title-pattern">
+        <div class="container clearfix">
+            <h1>შეფასებები</h1>
+            <span><%= thisUser.fullname %></span>
+                <ol class="breadcrumb">
+                    <li><a href="/home">მთავარი</a></li>
+                    <li><a href="/admin-panel">ადმინი</a></li>
+                    <li class="active"><a href="#">სია</a></li>
+            </ol>
+        </div>
 
-            <div class="container clearfix">
-                <h1>მთავარი გვერი</h1>
-                <span>აქ რამე უნდა მოვიფიქრო</span>
-            </div>
-
-        </section><!-- #page-title end -->
+    </section><!-- #page-title end -->
 
     <!-- Content
     ============================================= -->
@@ -101,7 +104,53 @@
         <div class="content-wrap">
             <div class="section">
                 <div class="container clearfix">
+                    <h4>შეფასებულია:</h4>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>By</th>
+                            <th>Office</th>
+                            <th>Date</th>
+                            <th>Average Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <% eva.forEach(function(evaluatedBy){ %>
+                            <td><%= evaluatedBy.author.fullname %></td>
+                            <td><%= evaluatedBy.office %></td>
+                            <td><%= evaluatedBy.date.toDateString() %></td>
+                            <td><%= evaluatedBy.score %></td>
+                          <% }) %>
+                        </tr>
+                        </tbody>
+                    </table>
 
+                    <div class="line"></div>
+
+                    <h4>შეაფასა:</h4>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Office</th>
+                            <th>Date</th>
+                            <th>Average Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <% evalu.forEach(function(evaluated){ %>
+                            <td><%= evaluated.author.fullname %></td>
+                            <td><%= evaluated.office %></td>
+                            <td><%= evaluated.date.toDateString() %></td>
+                            <td><%= evaluated.score %></td>
+                            <% }) %>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="line"></div>
 
                 </div>
             </div>
@@ -112,31 +161,31 @@
     <!-- Footer
     ============================================= -->
 </div>
-    <footer id="footer" class="dark">
+<footer id="footer" class="dark">
 
 
 
-        <!-- Copyrights
-        ============================================= -->
-        <div id="copyrights">
+    <!-- Copyrights
+    ============================================= -->
+    <div id="copyrights">
 
-            <div class="container clearfix">
+        <div class="container clearfix">
 
-                <div class="col_half">
-                    Copyrights &copy; 2014 All Rights Reserved by Sula Inc.<br>
-                    <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
-                </div>
-
-                    <div class="clear"></div>
-
-                </div>
-
+            <div class="col_half">
+                Copyrights &copy; 2014 All Rights Reserved by Sula Inc.<br>
+                <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
             </div>
 
-        </div><!-- #copyrights end -->
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+
+    </div><!-- #copyrights end -->
 
 
-    </footer><!-- #footer end -->
+</footer><!-- #footer end -->
 
 </div><!-- #wrapper end -->
 

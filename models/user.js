@@ -9,7 +9,8 @@ var UserSchema = new mongoose.Schema({
   tel: String,
   password: String,
   permission: String,
-  position: String
+  position: String,
+  score: []
 });
 
 UserSchema.plugin(passportLocalMongoose);

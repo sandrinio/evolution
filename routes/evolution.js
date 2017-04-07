@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var Evo = require('../models/evolution');
 
 
 router.get('/evolution', function (req, res) {
@@ -16,6 +17,7 @@ router.get('/evolution', function (req, res) {
 router.post('/evolution', function (req, res) {
   var evo = {};
   evo.evaluated = req.body.evaluated;
+  evo.office = req.body.office;
   evo.competency = req.body.competency;
   evo.service = req.body.service;
   evo.discipline = req.body.discipline;
@@ -42,7 +44,39 @@ router.post('/evolution', function (req, res) {
 
    evo.score = averageScores;
 
-   res.send(evo);
+   console.log('average score:');
+   console.log(averageScores);
+   console.log('==============');
+   // var userRating = [];
+
+  User.findOne({'fullname': req.body.evaluated}, function (err, user) {
+    if(err){
+      res.send(err)
+    }else{
+      var userScore = user.score;
+      userScore.push(averageScores);
+
+      console.log('array');
+      console.log(userScore);
+
+      user.update({score: userScore}, function (err, updatedScore) {
+        if(err){
+          res.send(err)
+        }else{
+          Evo.create(evo, function (err, data) {
+            if(err){
+              console.log(err);
+            }else{
+
+              res.redirect('back')
+            }
+          });
+        }
+      });
+    }
+  });
+
+
 });
 
 module.exports = router;

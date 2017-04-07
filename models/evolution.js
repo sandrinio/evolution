@@ -16,6 +16,7 @@ var EvoSchema = new mongoose.Schema({
 
   evaluated: String,
   score: String,
+  office: String,
 
   competency: {
         c1: String,

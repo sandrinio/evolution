@@ -1388,7 +1388,7 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 #primary-menu.style-3 > ul > li.current > a {
 	color: #FFF;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-	background-color: #1ABC9C;
+	background-color: #642887;
 }
 
 
@@ -3419,7 +3419,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 -----------------------------------------------------------------*/
 
 #page-title.page-title-pattern {
-	background-image: url('images/pattern.png');
+	background-image: url('../../images/pattern.png');
 	background-repeat: repeat;
 	background-attachment: fixed;
 }

@@ -33,7 +33,7 @@
 
 </head>
 
-<body class="stretched side-header open-header close-header-on-scroll device-lg">
+<body class="stretched">
 
 <!-- Document Wrapper
 ============================================= -->
@@ -41,11 +41,7 @@
 
     <!-- Header
     ============================================= -->
-    <div id="header-trigger">
-        <i class="icon-line-menu"></i>
-        <i class="icon-line-cross"></i>
-    </div>
-    <header id="header" class="no-sticky">
+    <header id="header" class="full-header">
 
         <div id="header-wrap">
 
@@ -55,24 +51,29 @@
 
                 <!-- Logo
                 ============================================= -->
-                <div id="logo">
-                <a href="/home" class="standard-logo" data-dark-logo="../../images/geocell-logo.png">
-                    <img src="../../images/geocell-logo.png">
-                </a>
-                <a href="/home" class="retina-logo" data-dark-logo="../../images/geocell-logo.png">
-                    <img src="../../images/geocell-logo.png" >
-                </a>
-                </div>
+                <!--<div id="logo">-->
+                <!--<a href="/home" class="standard-logo" data-dark-logo="../../images/geocell-logo.png">-->
+                <!--<img src="../../images/geocell-logo.png">-->
+                <!--</a>-->
+                <!--<a href="/home" class="retina-logo" data-dark-logo="../../images/geocell-logo.png">-->
+                <!--<img src="../../images/geocell-logo.png" >-->
+                <!--</a>-->
+                <!--</div>-->
 
                 <!-- Primary Navigation
                 ============================================= -->
-                <nav id="primary-menu">
+                <nav id="primary-menu" class="style-3">
 
-                    <ul>
+                    <ul class="sf-js-enabled" style="touch-action: pan-y;">
                         <li><a href="/home"><div>მთავარი</div></a></li>
-
-                        <li><a href="/evolution"><div>შეფასება</div></a></li>
+                        <% if(currentUser != undefined && currentUser.permission === 'Admin'){ %>
+                        <li><a href="/register"><div>რეგისტრაცია</div></a></li>
+                        <li><a href="/admin-panel"><div>ადმინ</div></a></li>
+                        <% } %>
+                        <li class="current"><a href="/evolution"><div>შეფასება</div></a></li>
+                        <% if(currentUser != undefined) { %>
                         <li><a href="#"><div><em><%= currentUser.fullname %></em></div></a></li>
+                        <% } %>
                     </ul>
 
 
@@ -85,6 +86,21 @@
 
     </header><!-- #header end -->
 
+                <!-- Page Title
+                ============================================= -->
+    <section id="page-title" class="page-title-pattern">
+
+        <div class="container clearfix">
+            <h1>Page Title with Pattern</h1>
+            <span>A Short Page Title Tagline</span>
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shortcodes</a></li>
+                <li class="active">Page Titles</li>
+            </ol>
+        </div>
+
+    </section><!-- #page-title end -->
 
     <!-- Content
     ============================================= -->
@@ -92,7 +108,6 @@
 
         <div class="content-wrap">
           <div class="section">
-
             <div class="container clearfix">
                 <form action="/evolution" method="post">
                         <div class="col-md-12">
@@ -105,6 +120,19 @@
                                         <% }); %>
                                     </select>
                                     <p id="totalScore"><strong><em></em></strong></p>
+                                    <h4>ოფისი:</h4>
+                                    <select name="office" class="select-1 form-control">
+                                        <option>რუსთაველი</option>
+                                        <option>პიქსელი</option>
+                                        <option>ცენტრალი</option>
+                                        <option>ავლაბარი</option>
+                                        <option>გლდანი</option>
+                                        <option>ორთაჭალა</option>
+                                        <option>ვარკეთილი</option>
+                                        <option>მარჯანიშვილი</option>
+                                        <option>კოსტავა</option>
+                                        <option>პეკინი</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
