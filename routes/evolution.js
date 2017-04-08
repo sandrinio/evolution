@@ -41,14 +41,14 @@ router.post('/evolution', function (req, res) {
    evo.competency.cStars = cStars;
 
    var sStars = (+req.body.service.s1 + +req.body.service.s2 + +req.body.service.s3 + +req.body.service.s4) / 4;
-   evo.service.cStars = sStars;
+   evo.service.sStars = sStars;
 
    var dStars = (+req.body.discipline.d1 + +req.body.discipline.d2 + +req.body.discipline.d3) / 3;
-   evo.discipline.cStars = dStars;
+   evo.discipline.dStars = dStars;
 
    var oStars = (+req.body.other.o1 + +req.body.other.o2 + +req.body.other.o3
      + +req.body.other.o4 + +req.body.other.o5 + +req.body.other.o6) / 6;
-   evo.other.cStars = oStars;
+   evo.other.oStars = oStars;
 
    var averageScores = cStars + sStars + dStars + oStars / 4;
 
@@ -66,8 +66,6 @@ router.post('/evolution', function (req, res) {
       var userScore = user.score;
       userScore.push(averageScores);
 
-      console.log('array');
-      console.log(userScore);
 
       user.update({score: userScore}, function (err, updatedScore) {
         if(err){

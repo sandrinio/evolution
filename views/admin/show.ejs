@@ -178,13 +178,67 @@
                         </div>
 
                         <div id="snav-content3">
-                            <h3>მომსახურების ხარისხი</h3>
-                            Dolor aperiam modi aliquam dolores consequatur error commodi ad eius incidunt! Libero, odio incidunt ullam sunt fugiat? Laboriosam, perferendis, debitis, harum soluta iste eos sunt odit architecto porro eveniet sint optio nihil animi. Laudantium, quam, culpa, velit molestias exercitationem reprehenderit enim distinctio aliquam aut ex numquam sequi assumenda veritatis fuga voluptatum. Magni, voluptates adipisci unde sapiente eligendi ea maxime tempora pariatur ipsa.. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, aspernatur, saepe, quidem animi hic rem libero earum fuga voluptas culpa iure qui accusantium ab quae dolorum laborum quia repellat fugit aut minima molestias placeat mollitia doloribus quibusdam consectetur officia nesciunt ad. Ab, quod ipsum commodi assumenda doloribus possimus sed laudantium.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            <h3>დისციპლინა და სტანდარტები</h3>
+                            <p>ქულა: <%= evaluation.discipline.dStars %></p>
+                            <div class="criterium-box">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                    <tr>
+                                        <td>გაყიდვებზე ორიენტირებულობა</td>
+                                        <td><%= evaluation.discipline.d1 %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>აბონენტის მომსმენის და მისი სჭირობების ინდენტიფიცირების უნარი</td>
+                                        <td><%= evaluation.discipline.d2 %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>აბონენტისთვის ამომწურავი ინფორმაციის გადაცემა</td>
+                                        <td><%= evaluation.discipline.d3 %></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class='comment-box'>
+                                <%= evaluation.discipline.dComment %>
+                            </div>
                         </div>
 
                         <div id="snav-content4">
                             <h3>სხვა</h3>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, nostrum, dolores id quo nam repudiandae ad culpa architecto minima nemo eaque soluta nulla laborum neque provident saepe facilis expedita numquam quas alias in perferendis accusamus ipsam blanditiis sit voluptatem temporibus vero error veritatis repellat eos reiciendis repellendus quam. Officia dicta ipsam nostrum aperiam. Dolor, expedita enim modi nostrum commodi sint architecto aliquam aut mollitia repellendus deserunt quaerat aspernatur aperiam voluptatibus consequatur rerum consequuntur.
+                            <p>ქულა: <%= evaluation.other.oStars %></p>
+                            <div class="criterium-box">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                    <tr>
+                                        <td>კონფლიქტური სიტუაციების მართვა</td>
+                                        <td><%= evaluation.other.o1 %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>სტრესულ სიტუაციაში მუშაობის უნარი</td>
+                                        <td><%= evaluation.other.o2 %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>გუნდურობა</td>
+                                        <td><%= evaluation.other.o3 %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>დროის მართვა</td>
+                                        <td><%= evaluation.other.o4 %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>თვითგანვითარების უნარი</td>
+                                        <td><%= evaluation.other.o5 %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>პერსონალის მართვის უნარი (ფასედბა მხოლოდ სუპერვაიზორი და უფროსი კონსულტანტი)</td>
+                                        <td><%= evaluation.other.o6 %></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class='comment-box'>
+                                <%= evaluation.other.oComment %>
+                            </div>
                         </div>
 
                     </div>
