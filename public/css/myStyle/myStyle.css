@@ -39,3 +39,11 @@ textarea {
 .yellow {
     color: #000;
 }
+
+.criterium-box {
+    float: left;
+}
+
+.comment-box {
+    float: right;
+}
