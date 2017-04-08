@@ -32,6 +32,10 @@ router.get('/admin-panel/evaluation-list/:id', function (req, res) {
    if(err){
      console.log(err)
    }else{
+     var averageScore = user.score.reduce(add, 0);
+     function add(a, b) {
+       return a + b / user.score.length
+     }
      Evo.find({'evaluated': user.fullname}, function (err, eva) {
        if(err){
          console.log(err)
@@ -43,7 +47,8 @@ router.get('/admin-panel/evaluation-list/:id', function (req, res) {
              res.render('admin/evaluation-list', {
                eva: eva,
                thisUser: user,
-               evalu: evalu
+               evalu: evalu,
+               averageScore: averageScore
              });
            }
          });

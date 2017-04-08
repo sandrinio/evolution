@@ -89,8 +89,8 @@
                ============================================= -->
     <section id="page-title" class="page-title-pattern">
         <div class="container clearfix">
-            <h1>შეფასებები</h1>
-            <span><%= thisUser.fullname %></span>
+            <h1><%= thisUser.fullname %></h1>
+            <span>Average Score: <%= averageScore %></span>
                 <ol class="breadcrumb">
                     <li><a href="/home">მთავარი</a></li>
                     <li><a href="/admin-panel">ადმინი</a></li>
@@ -133,8 +133,8 @@
                             <td><%= evaluatedBy.author.fullname %></td>
                             <td><%= evaluatedBy.office %></td>
                             <td><%= evaluatedBy.date.toDateString() %></td>
-                            <td><%= Math.round(evaluatedBy.score[0]) %></td>
-                            <td><a href="#">More</a></td>
+                            <td><%= evaluatedBy.score %></td>
+                            <td><a href="/admin-panel/evaluation/<%= evaluatedBy._id %>">More</a></td>
                         </tr>
                         <% }) %>
                         </tbody>
@@ -142,7 +142,7 @@
 
                     <div class="line"></div>
 
-                    <h4></h4>
+                    <h4>ჰყავს შეფასებული</h4>
                     <table id="datatable2" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                         <tr>
@@ -168,8 +168,8 @@
                             <td><%= evaluated.author.fullname %></td>
                             <td><%= evaluated.office %></td>
                             <td><%= evaluated.date.toDateString() %></td>
-                            <td><%= Math.round(evaluated.score[0]) %></td>
-                            <td><a href="#">More</a></td>
+                            <td><%= evaluated.score %></td>
+                            <td><a href="/admin-panel/evaluation/<%= evaluated._id %>">More</a></td>
                         </tr>
                         <% }) %>
                         </tbody>

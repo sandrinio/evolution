@@ -14,6 +14,16 @@ router.get('/evolution', function (req, res) {
  });
 });
 
+router.get('/admin-panel/evaluation/:id/', function (req, res) {
+  Evo.findById(req.params.id, function (err, foundEvaluation) {
+    if(err){
+      console.log(err)
+    }else{
+      res.render('admin/show', {evaluation: foundEvaluation})
+    }
+  });
+});
+
 router.post('/evolution', function (req, res) {
   var evo = {};
   evo.evaluated = req.body.evaluated;
