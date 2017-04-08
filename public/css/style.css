@@ -111,7 +111,7 @@ dl, dt, dd, ol, ul, li {
 }
 
 ::selection {
-	background: #1ABC9C;
+	background: rgba(132, 49, 191, 1);
 	color: #FFF;
 	text-shadow: none;
 }
@@ -123,7 +123,7 @@ dl, dt, dd, ol, ul, li {
 }
 
 ::-webkit-selection {
-	background: #1ABC9C; /* Safari */
+	background: rgba(132, 49, 191, 1); /* Safari */
 	color: #FFF;
 	text-shadow: none;
 }
@@ -145,7 +145,7 @@ body {
 
 a {
 	text-decoration: none !important;
-	color: #1ABC9C;
+	color: #642887;
 }
 
 a:hover { color: #222; }
@@ -3363,7 +3363,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 
 .breadcrumb a { color: #555; }
 
-.breadcrumb a:hover { color: #1ABC9C; }
+.breadcrumb a:hover { color: #642887; }
 
 .breadcrumb i { width: auto !important; }
 
@@ -12445,8 +12445,8 @@ body:not(.device-touch) .tagcloud a {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
 	color: #FFF !important;
-	background-color: #1ABC9C !important;
-	border-color: #1ABC9C !important;
+	background-color: #642887 !important;
+	border-color: #642887 !important;
 }
 
 .nav-pills > li.active > a,

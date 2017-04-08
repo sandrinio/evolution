@@ -32,7 +32,7 @@ router.get('/admin-panel/evaluation-list/:id', function (req, res) {
    if(err){
      console.log(err)
    }else{
-     Evo.find({'fullname': user.fullname}, function (err, eva) {
+     Evo.find({'evaluated': user.fullname}, function (err, eva) {
        if(err){
          console.log(err)
        }else {
