@@ -47,3 +47,7 @@ textarea {
 .comment-box {
     float: left;
 }
+
+.text-bold {
+    font-weight: 800;
+}

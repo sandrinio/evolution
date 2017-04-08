@@ -92,7 +92,7 @@
         <span>შეფასების თარიღი: <%= evaluation.date.toDateString() %></span>
         <span>ოფისი: <%= evaluation.office %></span>
         <span>შეაფასა: <%= evaluation.author.fullname %></span>
-        <span>ქულა: <%= evaluation.score %></span>
+        <span>საშუალო ქულა: <%= evaluation.score %></span>
     </div>
 
 </section><!-- #page-title end -->
@@ -119,7 +119,7 @@
 
                         <div id="snav-content1">
                                    <h3>კომპეტენცია</h3>
-                               <p>ქულა: <%= evaluation.competency.cStars %></p>
+                               <p class="text-bold">ქულა: <%= evaluation.competency.cStars %></p>
                             <div class="criterium-box">
                                 <table class="table table-bordered">
                                   <tbody>
