@@ -4,7 +4,7 @@ var User = require('../models/user');
 var Evo = require('../models/evolution')
 
 router.get('/admin-panel', function (req, res) {
-  User.find({}, function (err, user) {
+  User.find({}).sort('-date').exec(function (err, user) {
     if(err){
       console.log(err)
     }else{
@@ -36,11 +36,11 @@ router.get('/admin-panel/evaluation-list/:id', function (req, res) {
      function add(a, b) {
        return a + b / user.score.length
      }
-     Evo.find({'evaluated': user.fullname}, function (err, eva) {
+     Evo.find({'evaluated': user.fullname}).sort('-date').exec(function (err, eva) {
        if(err){
          console.log(err)
        }else {
-         Evo.find({'author.fullname': user.fullname}, function (err, evalu) {
+         Evo.find({'author.fullname': user.fullname}).sort('-date').exec(function (err, evalu) {
            if(err){
              console.log(err)
            }else{

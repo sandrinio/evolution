@@ -7,7 +7,6 @@
 
     <!-- Stylesheets
     ============================================= -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="../../css/style.css" type="text/css" />
     <link rel="stylesheet" href="../../css/swiper.css" type="text/css" />
@@ -135,7 +134,7 @@
                             <td><%= user.position %></td>
                             <td><%= user.tel %></td>
                             <td><%= user.bday %></td>
-                            <td><%= Math.round(user.score[0]) %></td>
+                            <td><%= user.score.toString().slice(0, 4) %></td>
                             <td><a href="/admin-panel/evaluation-list/<%= user._id %>">More</a></td>
                         </tr>
                         <% }) %>

@@ -7,7 +7,6 @@
 
     <!-- Stylesheets
     ============================================= -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="../../css/style.css" type="text/css" />
     <link rel="stylesheet" href="../../css/swiper.css" type="text/css" />
@@ -92,7 +91,7 @@
         <span>შეფასების თარიღი: <%= evaluation.date.toDateString() %></span>
         <span>ოფისი: <%= evaluation.office %></span>
         <span>შეაფასა: <%= evaluation.author.fullname %></span>
-        <span>საშუალო ქულა: <%= evaluation.score %></span>
+        <span>საშუალო ქულა: <%= evaluation.score.toString().slice(0, 4) %></span>
     </div>
 
 </section><!-- #page-title end -->
@@ -117,9 +116,9 @@
 
                     <div class="col_two_third col_last nobottommargin">
 
-                        <div id="snav-content1">
+                        <div id="snav-content1" class="show-page">
                                    <h3>კომპეტენცია</h3>
-                               <p class="text-bold">ქულა: <%= evaluation.competency.cStars %></p>
+                               <p>ქულა: <%= evaluation.competency.cStars.toString().slice(0, 4) %></p>
                             <div class="criterium-box">
                                 <table class="table table-bordered">
                                   <tbody>
@@ -147,9 +146,9 @@
                             </div>
                         </div>
 
-                        <div id="snav-content2">
+                        <div id="snav-content2" class="show-page">
                             <h3>მომსახურების ხარისხი</h3>
-                            <p>ქულა: <%= evaluation.service.sStars %></p>
+                            <p>ქულა: <%= evaluation.service.sStars.toString().slice(0, 4) %></p>
                             <div class="criterium-box">
                                 <table class="table table-bordered">
                                   <tbody>
@@ -177,9 +176,9 @@
                             </div>
                         </div>
 
-                        <div id="snav-content3">
+                        <div id="snav-content3" class="show-page">
                             <h3>დისციპლინა და სტანდარტები</h3>
-                            <p>ქულა: <%= evaluation.discipline.dStars %></p>
+                            <p>ქულა: <%= evaluation.discipline.dStars.toString().slice(0, 4) %></p>
                             <div class="criterium-box">
                                 <table class="table table-bordered">
                                     <tbody>
@@ -203,9 +202,9 @@
                             </div>
                         </div>
 
-                        <div id="snav-content4">
+                        <div id="snav-content4" class="show-page">
                             <h3>სხვა</h3>
-                            <p>ქულა: <%= evaluation.other.oStars %></p>
+                            <p>ქულა: <%= evaluation.other.oStars.toString().slice(0, 4) %></p>
                             <div class="criterium-box">
                                 <table class="table table-bordered">
                                     <tbody>

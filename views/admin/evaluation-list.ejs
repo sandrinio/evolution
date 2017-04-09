@@ -7,7 +7,6 @@
 
     <!-- Stylesheets
     ============================================= -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="../../css/style.css" type="text/css" />
     <link rel="stylesheet" href="../../css/swiper.css" type="text/css" />
@@ -90,7 +89,7 @@
     <section id="page-title" class="page-title-pattern">
         <div class="container clearfix">
             <h1><%= thisUser.fullname %></h1>
-            <span>Average Score: <%= averageScore %></span>
+            <span>Average Score: <%= averageScore.toString().slice(0, 4) %></span>
                 <ol class="breadcrumb">
                     <li><a href="/home">მთავარი</a></li>
                     <li><a href="/admin-panel">ადმინი</a></li>
@@ -133,7 +132,7 @@
                             <td><%= evaluatedBy.author.fullname %></td>
                             <td><%= evaluatedBy.office %></td>
                             <td><%= evaluatedBy.date.toDateString() %></td>
-                            <td><%= evaluatedBy.score %></td>
+                            <td><%= evaluatedBy.score.toString().slice(0, 4) %></td>
                             <td><a href="/admin-panel/evaluation/<%= evaluatedBy._id %>">More</a></td>
                         </tr>
                         <% }) %>
@@ -168,7 +167,7 @@
                             <td><%= evaluated.evaluated %></td>
                             <td><%= evaluated.office %></td>
                             <td><%= evaluated.date.toDateString() %></td>
-                            <td><%= evaluated.score %></td>
+                            <td><%= evaluated.score.toString().slice(0, 4) %></td>
                             <td><a href="/admin-panel/evaluation/<%= evaluated._id %>">More</a></td>
                         </tr>
                         <% }) %>
