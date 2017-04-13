@@ -14,7 +14,8 @@ var mongoose     = require("mongoose"),
 var authRoutes = require('./routes/auth'),
     homeRoutes = require('./routes/home'),
     evoRoutes = require('./routes/evolution'),
-    adminRoutes = require('./routes/admin');
+    adminRoutes = require('./routes/admin'),
+    profileRoutes = require('./routes/profile');
 
 app.use(session({
   secret: 'keyboard cat',
@@ -24,7 +25,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
+// passport.use(new LocalStrategy(User.authenticate()));
+passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -46,6 +48,7 @@ app.use(authRoutes);
 app.use(homeRoutes);
 app.use(evoRoutes);
 app.use(adminRoutes);
+app.use(profileRoutes);
 
 
 mongoose.Promise = global.Promise;

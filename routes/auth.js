@@ -9,11 +9,11 @@ router.get('/', function (req, res) {
   res.render('auth/login')
 });
 
-router.get('/register', function (req, res) {
+router.get('/register', middleware.permissionChecker, function (req, res) {
   res.render('auth/register')
 });
 
-router.post('/register', function (req, res) {
+router.post('/register', middleware.permissionChecker, function (req, res) {
   if(req.body.password === req.body.repassword) {
     var userInfo = req.body.user;
     User.register(userInfo, req.body.password, function (err, user) {

@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 var Evo = require('../models/evolution');
+var middleware = require('../middleware');
 
 
-router.get('/evolution', function (req, res) {
+router.get('/evolution', middleware.isLoggedIn, function (req, res) {
   User.find({}, function (err, user) {
    if(err){
      console.log(err)
@@ -14,7 +15,7 @@ router.get('/evolution', function (req, res) {
  });
 });
 
-router.get('/admin-panel/evaluation/:id/', function (req, res) {
+router.get('/admin-panel/evaluation/:id/', middleware.permissionChecker, function (req, res) {
   Evo.findById(req.params.id, function (err, foundEvaluation) {
     if(err){
       console.log(err)
@@ -24,7 +25,7 @@ router.get('/admin-panel/evaluation/:id/', function (req, res) {
   });
 });
 
-router.post('/evolution', function (req, res) {
+router.post('/evolution', middleware.isLoggedIn, function (req, res) {
   var evo = {};
   evo.evaluated = req.body.evaluated;
   evo.office = req.body.office;

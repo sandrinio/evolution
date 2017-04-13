@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
-var Evo = require('../models/evolution')
+var Evo = require('../models/evolution');
+var middleware = require('../middleware');
 
-router.get('/admin-panel', function (req, res) {
+router.get('/admin-panel', middleware.permissionChecker, function (req, res) {
   User.find({}).sort('-date').exec(function (err, user) {
     if(err){
       console.log(err)
@@ -27,7 +28,7 @@ router.get('/admin-panel', function (req, res) {
   });
 });
 
-router.get('/admin-panel/evaluation-list/:id', function (req, res) {
+router.get('/admin-panel/evaluation-list/:id', middleware.permissionChecker, function (req, res) {
  User.findById(req.params.id, function (err, user) {
    if(err){
      console.log(err)
@@ -60,7 +61,7 @@ router.get('/admin-panel/evaluation-list/:id', function (req, res) {
 
 });
 
-router.get('/admin-panel/evaluation/:id', function (req, res) {
+router.get('/admin-panel/evaluation/:id', middleware.permissionChecker, function (req, res) {
   res.send('show page')
 });
 

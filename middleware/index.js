@@ -1,7 +1,7 @@
 var middlewareObject = {};
 
 middlewareObject.permissionChecker = function (req, res, next) {
-  if(req.isAuthenticated() && req.user.permission === "admin"){
+  if(req.isAuthenticated() && req.user.permission === "Admin"){
     next();
   } else {
     req.flash("error", "no permission");
