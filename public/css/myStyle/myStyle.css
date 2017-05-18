@@ -60,3 +60,7 @@ textarea {
     font-weight: 800;
 }
 /*comment-box*/
+
+.links-container {
+    display: none;
+}

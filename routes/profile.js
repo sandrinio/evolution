@@ -27,7 +27,7 @@ router.post('/pass-change', middleware.isLoggedIn, function (req, res) {
 });
 
 router.put('/mob-change', middleware.isLoggedIn, function (req, res) {
-   User.findByIdAndUpdate(req.user.id, req.body.tel, function (err, user) {
+   User.findByIdAndUpdate(req.user.id, req.body.user, function (err, user) {
      if(err){
        console.log(err)
      }else{

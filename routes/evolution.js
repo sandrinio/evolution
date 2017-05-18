@@ -10,7 +10,10 @@ router.get('/evolution', middleware.isLoggedIn, function (req, res) {
    if(err){
      console.log(err)
    }else{
-     res.render('evolution/evolution', {users: user})
+     res.render('evolution/evolution', {
+        users: user,
+        evaluation: 'evaluation'
+     })
    }
  });
 });

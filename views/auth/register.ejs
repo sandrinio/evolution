@@ -41,7 +41,7 @@
     <!-- Content
     ============================================= -->
     <section id="content">
-
+    <div class="section">
         <div class="content-wrap nopadding">
             <div class="section nobg full-screen nopadding nomargin">
                 <div class="container vertical-middle divcenter clearfix">
@@ -57,8 +57,27 @@
                             </div>
 
                             <div class="col_half col_last">
-                                <label for="register-form-fullname">Full Name:</label>
-                                <input type="text" id="register-form-fullname" name="user[fullname]" value="" class="form-control" />
+                                <label for="register-form-firstname">First Name:</label>
+                                <input type="text" id="register-form-firstname" name="user[firstname]" value="" class="form-control" />
+                            </div>
+                            <div class="col_half col_half">
+                                <label for="register-form-lastname">Last Name:</label>
+                                <input type="text" id="register-form-lastname" name="user[lastname]" value="" class="form-control" />
+                            </div>
+                            <div class="col_half col_last">
+                                <label for="">Office</label>
+                                <select name="user[office]" class="select-1 form-control">
+                                    <option>Vake Shop           </option>
+                                    <option>Central Shop        </option>
+                                    <option>Gldani Shop         </option>
+                                    <option>Marjanishvili Shop  </option>
+                                    <option>Rustaveli Shop      </option>
+                                    <option>Avlabari Shop       </option>
+                                    <option>Pekini Shop         </option>
+                                    <option>Kostava Shop        </option>
+                                    <option>Ortachala Shop      </option>
+                                    <option>Varketili Shop      </option>
+                                </select>
                             </div>
 
                             <div class="clear"></div>
@@ -115,171 +134,173 @@
                     </div>
                 </div>
             </div>
-
+    </div>
     </section><!-- #content end -->
 
-</div><!-- #wrapper end -->
+    <% include ../partials/footer.ejs %>
 
-<!-- Go To Top
-============================================= -->
-<div id="gotoTop" class="icon-angle-up"></div>
+<!--</div>&lt;!&ndash; #wrapper end &ndash;&gt;-->
 
-<!-- External JavaScripts
-============================================= -->
-<script type="text/javascript" src="../../js/jquery.js"></script>
-<script type="text/javascript" src="../../js/plugins.js"></script>
-<!-- Date & Time Picker JS -->
-<script type="text/javascript" src="../../js/moment.js"></script>
-<script type="text/javascript" src="../../js/datepicker.js"></script>
-<script type="text/javascript" src="../../js/timepicker.js"></script>
+<!--&lt;!&ndash; Go To Top-->
+<!--============================================= &ndash;&gt;-->
+<!--<div id="gotoTop" class="icon-angle-up"></div>-->
 
-<!-- Include Date Range Picker -->
-<script type="text/javascript" src="../../js/daterangepicker.js"></script>
+<!--&lt;!&ndash; External JavaScripts-->
+<!--============================================= &ndash;&gt;-->
+<!--<script type="text/javascript" src="../../js/jquery.js"></script>-->
+<!--<script type="text/javascript" src="../../js/plugins.js"></script>-->
+<!--&lt;!&ndash; Date & Time Picker JS &ndash;&gt;-->
+<!--<script type="text/javascript" src="../../js/moment.js"></script>-->
+<!--<script type="text/javascript" src="../../js/datepicker.js"></script>-->
+<!--<script type="text/javascript" src="../../js/timepicker.js"></script>-->
+
+<!--&lt;!&ndash; Include Date Range Picker &ndash;&gt;-->
+<!--<script type="text/javascript" src="../../js/daterangepicker.js"></script>-->
 
 
-<!-- Footer Scripts
-============================================= -->
-<script type="text/javascript" src="../../js/functions.js"></script>
+<!--&lt;!&ndash; Footer Scripts-->
+<!--============================================= &ndash;&gt;-->
+<!--<script type="text/javascript" src="../../js/functions.js"></script>-->
 
-<script type="text/javascript">
-  $(function() {
-    $('.travel-date-group .default').datepicker({
-      autoclose: true,
-      startDate: "today",
-    });
+<!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
+  <!--&lt;!&ndash;$(function() {&ndash;&gt;-->
+    <!--&lt;!&ndash;$('.travel-date-group .default').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoclose: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;startDate: "today",&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.travel-date-group .today').datepicker({
-      autoclose: true,
-      startDate: "today",
-      todayHighlight: true
-    });
+    <!--&lt;!&ndash;$('.travel-date-group .today').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoclose: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;startDate: "today",&ndash;&gt;-->
+      <!--&lt;!&ndash;todayHighlight: true&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.travel-date-group .past-enabled').datepicker({
-      autoclose: true,
-    });
-    $('.travel-date-group .format').datepicker({
-      autoclose: true,
-      format: "dd-mm-yyyy",
-    });
+    <!--&lt;!&ndash;$('.travel-date-group .past-enabled').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoclose: true,&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
+    <!--&lt;!&ndash;$('.travel-date-group .format').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoclose: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;format: "dd-mm-yyyy",&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.travel-date-group .autoclose').datepicker();
+    <!--&lt;!&ndash;$('.travel-date-group .autoclose').datepicker();&ndash;&gt;-->
 
-    $('.travel-date-group .disabled-week').datepicker({
-      autoclose: true,
-      daysOfWeekDisabled: "0"
-    });
+    <!--&lt;!&ndash;$('.travel-date-group .disabled-week').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoclose: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;daysOfWeekDisabled: "0"&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.travel-date-group .highlighted-week').datepicker({
-      autoclose: true,
-      daysOfWeekHighlighted: "0"
-    });
+    <!--&lt;!&ndash;$('.travel-date-group .highlighted-week').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoclose: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;daysOfWeekHighlighted: "0"&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.travel-date-group .mnth').datepicker({
-      autoclose: true,
-      minViewMode: 1,
-      format: "mm/yy"
-    });
+    <!--&lt;!&ndash;$('.travel-date-group .mnth').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoclose: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;minViewMode: 1,&ndash;&gt;-->
+      <!--&lt;!&ndash;format: "mm/yy"&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.travel-date-group .multidate').datepicker({
-      multidate: true,
-      multidateSeparator: " , "
-    });
+    <!--&lt;!&ndash;$('.travel-date-group .multidate').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;multidate: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;multidateSeparator: " , "&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.travel-date-group .input-daterange').datepicker({
-      autoclose: true
-    });
+    <!--&lt;!&ndash;$('.travel-date-group .input-daterange').datepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoclose: true&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.travel-date-group .inline-calendar').datepicker();
+    <!--&lt;!&ndash;$('.travel-date-group .inline-calendar').datepicker();&ndash;&gt;-->
 
-    $('.datetimepicker').datetimepicker({
-      showClose: true
-    });
+    <!--&lt;!&ndash;$('.datetimepicker').datetimepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;showClose: true&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.datetimepicker1').datetimepicker({
-      format: 'LT',
-      showClose: true
-    });
+    <!--&lt;!&ndash;$('.datetimepicker1').datetimepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;format: 'LT',&ndash;&gt;-->
+      <!--&lt;!&ndash;showClose: true&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $('.datetimepicker2').datetimepicker({
-      inline: true,
-      sideBySide: true
-    });
+    <!--&lt;!&ndash;$('.datetimepicker2').datetimepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;inline: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;sideBySide: true&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-  });
+  <!--&lt;!&ndash;});&ndash;&gt;-->
 
-  $(function() {
-    // .daterange1
-    $(".daterange1").daterangepicker({
-      "buttonClasses": "button button-rounded button-mini nomargin",
-      "applyClass": "button-color",
-      "cancelClass": "button-light"
-    });
+  <!--&lt;!&ndash;$(function() {&ndash;&gt;-->
+    <!--&lt;!&ndash;// .daterange1&ndash;&gt;-->
+    <!--&lt;!&ndash;$(".daterange1").daterangepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;"buttonClasses": "button button-rounded button-mini nomargin",&ndash;&gt;-->
+      <!--&lt;!&ndash;"applyClass": "button-color",&ndash;&gt;-->
+      <!--&lt;!&ndash;"cancelClass": "button-light"&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    // .daterange2
-    $(".daterange2").daterangepicker({
-      "opens": "center",
-      timePicker: true,
-      timePickerIncrement: 30,
-      locale: {
-        format: 'MM/DD/YYYY h:mm A'
-      },
-      "buttonClasses": "button button-rounded button-mini nomargin",
-      "applyClass": "button-color",
-      "cancelClass": "button-light"
-    });
+    <!--&lt;!&ndash;// .daterange2&ndash;&gt;-->
+    <!--&lt;!&ndash;$(".daterange2").daterangepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;"opens": "center",&ndash;&gt;-->
+      <!--&lt;!&ndash;timePicker: true,&ndash;&gt;-->
+      <!--&lt;!&ndash;timePickerIncrement: 30,&ndash;&gt;-->
+      <!--&lt;!&ndash;locale: {&ndash;&gt;-->
+        <!--&lt;!&ndash;format: 'MM/DD/YYYY h:mm A'&ndash;&gt;-->
+      <!--&lt;!&ndash;},&ndash;&gt;-->
+      <!--&lt;!&ndash;"buttonClasses": "button button-rounded button-mini nomargin",&ndash;&gt;-->
+      <!--&lt;!&ndash;"applyClass": "button-color",&ndash;&gt;-->
+      <!--&lt;!&ndash;"cancelClass": "button-light"&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    // .daterange3
-    $(".daterange3").daterangepicker({
-        singleDatePicker: true,
-        showDropdowns: true
-      },
-      function(start, end, label) {
-        var years = moment().diff(start, 'years');
-        alert("You are " + years + " years old.");
-      });
+    <!--&lt;!&ndash;// .daterange3&ndash;&gt;-->
+    <!--&lt;!&ndash;$(".daterange3").daterangepicker({&ndash;&gt;-->
+        <!--&lt;!&ndash;singleDatePicker: true,&ndash;&gt;-->
+        <!--&lt;!&ndash;showDropdowns: true&ndash;&gt;-->
+      <!--&lt;!&ndash;},&ndash;&gt;-->
+      <!--&lt;!&ndash;function(start, end, label) {&ndash;&gt;-->
+        <!--&lt;!&ndash;var years = moment().diff(start, 'years');&ndash;&gt;-->
+        <!--&lt;!&ndash;alert("You are " + years + " years old.");&ndash;&gt;-->
+      <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    // reportrange
-    function cb(start, end) {
-      $(".reportrange span").html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-    }
-    cb(moment().subtract(29, 'days'), moment());
+    <!--&lt;!&ndash;// reportrange&ndash;&gt;-->
+    <!--&lt;!&ndash;function cb(start, end) {&ndash;&gt;-->
+      <!--&lt;!&ndash;$(".reportrange span").html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));&ndash;&gt;-->
+    <!--&lt;!&ndash;}&ndash;&gt;-->
+    <!--&lt;!&ndash;cb(moment().subtract(29, 'days'), moment());&ndash;&gt;-->
 
-    $(".reportrange").daterangepicker({
-      "buttonClasses": "button button-rounded button-mini nomargin",
-      "applyClass": "button-color",
-      "cancelClass": "button-light",
-      ranges: {
-        'Today': [moment(), moment()],
-        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-        'This Month': [moment().startOf('month'), moment().endOf('month')],
-        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-      }
-    }, cb);
+    <!--&lt;!&ndash;$(".reportrange").daterangepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;"buttonClasses": "button button-rounded button-mini nomargin",&ndash;&gt;-->
+      <!--&lt;!&ndash;"applyClass": "button-color",&ndash;&gt;-->
+      <!--&lt;!&ndash;"cancelClass": "button-light",&ndash;&gt;-->
+      <!--&lt;!&ndash;ranges: {&ndash;&gt;-->
+        <!--&lt;!&ndash;'Today': [moment(), moment()],&ndash;&gt;-->
+        <!--&lt;!&ndash;'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],&ndash;&gt;-->
+        <!--&lt;!&ndash;'Last 7 Days': [moment().subtract(6, 'days'), moment()],&ndash;&gt;-->
+        <!--&lt;!&ndash;'Last 30 Days': [moment().subtract(29, 'days'), moment()],&ndash;&gt;-->
+        <!--&lt;!&ndash;'This Month': [moment().startOf('month'), moment().endOf('month')],&ndash;&gt;-->
+        <!--&lt;!&ndash;'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]&ndash;&gt;-->
+      <!--&lt;!&ndash;}&ndash;&gt;-->
+    <!--&lt;!&ndash;}, cb);&ndash;&gt;-->
 
-    // .daterange4
-    $(".daterange4").daterangepicker({
-      autoUpdateInput: false,
-      locale: {
-        cancelLabel: 'Clear'
-      },
-      "buttonClasses": "button button-rounded button-mini nomargin",
-      "applyClass": "button-color",
-      "cancelClass": "button-light"
-    });
+    <!--&lt;!&ndash;// .daterange4&ndash;&gt;-->
+    <!--&lt;!&ndash;$(".daterange4").daterangepicker({&ndash;&gt;-->
+      <!--&lt;!&ndash;autoUpdateInput: false,&ndash;&gt;-->
+      <!--&lt;!&ndash;locale: {&ndash;&gt;-->
+        <!--&lt;!&ndash;cancelLabel: 'Clear'&ndash;&gt;-->
+      <!--&lt;!&ndash;},&ndash;&gt;-->
+      <!--&lt;!&ndash;"buttonClasses": "button button-rounded button-mini nomargin",&ndash;&gt;-->
+      <!--&lt;!&ndash;"applyClass": "button-color",&ndash;&gt;-->
+      <!--&lt;!&ndash;"cancelClass": "button-light"&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $(".daterange4").on('apply.daterangepicker', function(ev, picker) {
-      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-    });
+    <!--&lt;!&ndash;$(".daterange4").on('apply.daterangepicker', function(ev, picker) {&ndash;&gt;-->
+      <!--&lt;!&ndash;$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-    $(".daterange4").on('cancel.daterangepicker', function(ev, picker) {
-      $(this).val('');
-    });
+    <!--&lt;!&ndash;$(".daterange4").on('cancel.daterangepicker', function(ev, picker) {&ndash;&gt;-->
+      <!--&lt;!&ndash;$(this).val('');&ndash;&gt;-->
+    <!--&lt;!&ndash;});&ndash;&gt;-->
 
-  });
+  <!--&lt;!&ndash;});&ndash;&gt;-->
 
-</script>
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->

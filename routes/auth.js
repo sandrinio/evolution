@@ -9,11 +9,11 @@ router.get('/', function (req, res) {
   res.render('auth/login')
 });
 
-router.get('/register', middleware.permissionChecker, function (req, res) {
+router.get('/register', function (req, res) {
   res.render('auth/register')
 });
 
-router.post('/register', middleware.permissionChecker, function (req, res) {
+router.post('/register', function (req, res) {
   if(req.body.password === req.body.repassword) {
     var userInfo = req.body.user;
     User.register(userInfo, req.body.password, function (err, user) {
@@ -21,6 +21,7 @@ router.post('/register', middleware.permissionChecker, function (req, res) {
         res.send(err)
       }else{
         res.redirect('/home')
+         console.log(user)
       }
     })
   }else{
@@ -32,8 +33,8 @@ router.post("/login", passport.authenticate("local", {
   successRedirect: "/home",
   failureRedirect: "/"
 }), function (req, res) {
-  req.flash("success", 'Welcome');
-  res.redirect("/");
+  res.flash("success", 'Welcome');
+  res.redirect("/home");
 });
 
 router.get("/logout", function (req, res) {

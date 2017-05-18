@@ -15,7 +15,8 @@ var authRoutes = require('./routes/auth'),
     homeRoutes = require('./routes/home'),
     evoRoutes = require('./routes/evolution'),
     adminRoutes = require('./routes/admin'),
-    profileRoutes = require('./routes/profile');
+    profileRoutes = require('./routes/profile'),
+    officeRoutes = require('./routes/offices');
 
 app.use(session({
   secret: 'keyboard cat',
@@ -25,7 +26,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-// passport.use(new LocalStrategy(User.authenticate()));
+passport.use(new LocalStrategy(User.authenticate()));
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -49,23 +50,13 @@ app.use(homeRoutes);
 app.use(evoRoutes);
 app.use(adminRoutes);
 app.use(profileRoutes);
+app.use(officeRoutes);
 
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://sandrinio:pachuchi@ds145750.mlab.com:45750/evo");
+mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
 // mongoose.connect("mongodb://localhost/gsm_guru");
-
-
-
-
-
-
-
-
-
-
-
 
 
 
