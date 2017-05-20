@@ -1,0 +1,133 @@
+.googleRegContainer {
+    margin-top: 5%;
+    margin-left: 34%;
+}
+
+.google-img {
+    width: 250px;
+}
+.textboxContainer {
+    margin:0 20%;
+}
+#userPic {
+    width: 30px
+}
+
+.h3, h3 {
+    font-weight: bold !important;
+    margin-bottom: 0 !important;
+}
+
+.warning {
+    margin-top: 5%;
+    margin-left: 50%;
+    display: inline-flex;
+}
+.fa.fa-exclamation {
+    font-size: 60px;
+    margin-right: 7px;
+    margin-top: -2px;
+    color: #754c97;
+}
+
+.btnStyle {
+    color: white;
+    border:1px solid #00a87d;
+    background-color: #00a87d;
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+}
+.btnStyle:hover {
+    background-color: #00c58f;
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+}
+
+.btnStyle2 {
+     color: white;
+    border:1px solid #00a87d;
+    background-color: #00a87d;
+    padding: 4px 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+}
+.btnStyle2:hover {
+    background-color: #00c58f;
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+}
+
+.textCenter {
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+/* printable page ================ */
+
+
+
+
+
+
+input[type=text] {
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #754c97;
+    font-weight: bold;
+    font-size: 18px;
+    color: #583C78;
+}
+
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAFA;
+        font: 12pt "Tahoma";
+    }
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .page {
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 2cm;
+        margin: 1cm auto;
+        border: 1px #D3D3D3 solid;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .subpage {
+        padding: 1cm;
+        border: 5px red solid;
+        height: 256mm;
+        outline: 2cm #FFEAEA solid;
+    }
+    
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    @media print {
+        .page {
+            margin: 0;
+            border: initial;
+            border-radius: initial;
+            width: initial;
+            min-height: initial;
+            box-shadow: initial;
+            background: initial;
+            page-break-after: always;
+        }
+}

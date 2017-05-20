@@ -136,6 +136,8 @@ $(document).ready(function() {
       });
 
    });
+   
+    $('.bt-editable').editable();
 
   var c1Val;
   var c2Val;

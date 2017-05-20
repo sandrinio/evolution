@@ -10,7 +10,9 @@ router.get('/profile', middleware.isLoggedIn, function (req, res) {
     if(err){
       return console.log(err)
     }
-    res.render('auth/profile', { evaluations: eval })
+    res.render('auth/profile', { evaluations: eval,
+                                 page_name: 'profile'
+                                 })
   });
 });
 
