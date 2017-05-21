@@ -3,7 +3,20 @@ var router = express.Router();
 var User = require('../models/user');
 var Eva = require('../models/evolution');
 var middleware = require('../middleware');
+var multer  = require('multer');
+var path = require('path');
 
+
+
+var storage = multer.diskStorage({
+   destination: function (req, file, cb) {
+      cb(null, 'public/uploads/userPictures/');
+   },
+   filename: function (req, file, cb) {
+      cb(null, req.user.firstname + req.user.lastname + path.extname(file.originalname));
+   }
+});
+var upload = multer({ storage: storage });
 
 router.get('/profile', middleware.isLoggedIn, function (req, res) {
   Eva.find({'author.fullname': req.user.fullname}).sort('-date').exec(function (err, eval) {
@@ -36,6 +49,20 @@ router.put('/mob-change', middleware.isLoggedIn, function (req, res) {
        res.redirect('back')
      }
    })
+});
+
+router.put("/avatar", upload.single('user[pic]'), function (req, res) {
+   var pic = ({pic: req.file.filename});
+   User.findByIdAndUpdate(req.user.id, pic, function (err, userPic) {
+      if(err){
+         console.log(err);
+         req.flash('error', err);
+         res.redirect("back")
+      }else{
+         req.flash('success', 'სურათი ატვირთულია');
+         res.redirect("back")
+      }
+   });
 });
 
 

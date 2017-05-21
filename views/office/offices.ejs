@@ -1,5 +1,14 @@
 <%include ../partials/header%>
+<!-- Page Title
+============================================= -->
+<section id="page-title" class="page-title-pattern">
 
+<div class="container clearfix">
+<h1>ოფისები</h1>
+<span></span>
+</div>
+
+</section><!-- #page-title end -->
 
 <div class="container">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -13,14 +22,20 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
-                    <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Vake Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
-
-                    </ul>
                 </div>
             </div>
         </div>
@@ -38,7 +53,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Central Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
                     </ul>
@@ -59,7 +83,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Rustaveli Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
 
@@ -81,7 +114,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Gldani Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
 
@@ -103,7 +145,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Marjanishvili Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
 
@@ -125,7 +176,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Ortachala Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
 
@@ -147,7 +207,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Avlabari Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
 
@@ -169,7 +238,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Varketili Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
 
@@ -191,7 +269,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Kostava Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
                     </ul>
@@ -212,7 +299,16 @@
                     <ul>
                         <% user.forEach(function (coworker) { %>
                         <% if(coworker.office === "Pekini Shop") { %>
-                        <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                        <div class="user-div col-xs-6 col-md-3">
+                            <img class="thumbnail" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>">
+                            <div class="user-info">
+                                <p><%= coworker.firstname + " " + coworker.lastname %></p>
+                                <ul>
+                                    <li><%= coworker.position %></li>
+                                    <li>TEL: <%= coworker.tel %></li>
+                                </ul>
+                            </div>
+                        </div>
                         <% } %>
                         <% }) %>
                     </ul>

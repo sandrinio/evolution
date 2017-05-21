@@ -11,8 +11,8 @@
               <div class="row clearfix">
                 <div class="col-sm-9">
 
-                    <img src="../../images/avatar.jpg" class="alignleft img-circle img-thumbnail notopmargin nobottommargin" alt="Avatar" style="max-width: 84px;">
-
+                    <img src="../../uploads/userPictures/<%= currentUser.pic %>"
+                         class="alignleft img-circle img-thumbnail notopmargin nobottommargin" alt="Avatar" style="max-width: 84px;">
                     <div class="heading-block noborder">
                         <h3><%= currentUser.firstname + " " + currentUser.lastname %></h3>
                         <span><%= currentUser.position %></span>
@@ -60,7 +60,12 @@
                                     <div class="tab-content clearfix" id="tab-settings">
                                         <div class="row topmargin-sm clearfix">
                                             <div class="col-xs-12 bottommargin-sm">
-                                                <form class="form-inline" action="/pass-change" method="POST">
+
+                                                <form action="/avatar?_method=PUT" method="POST" enctype="multipart/form-data"  class="col-md-6 bottommargin">
+                                                    <input id="input-8" type="file" name="user[pic]" accept="image/*" class="file-loading" data-allowed-file-extensions='[]'>
+                                                </form>
+
+                                                <form class="form-inline inline-block" action="/pass-change" method="POST">
                                                     <h4>პაროლის შეცვლა</h4>
                                                     <div class="form-group">
                                                         <label class="sr-only" for="pass">Password</label>
@@ -99,16 +104,18 @@
                                                     </div>
                                                     <button type="submit" class="btn btn-default">შეცვლა</button>
                                                 </form>
-                                                <h3><em><u>Signature</u></em></h3>
-                                                <p><span id="signature"><strong><%=currentUser.firstname + " " + currentUser.lastname%></strong></span><br>
-                                                <%= currentUser.position %><br>
-                                                <%= currentUser.office %><br>
-                                                Mobile: <%= currentUser.tel %><br>
-                                                <a><%= currentUser.username %></a><br>
-                                                Geocell LLC., Part of Telia Company<br>
-                                                3 Gotua Str. Right Side of the River Mtkvari,Tbilisi, 0160, Georgia<br>
-                                                <a>www.teliacompany.com</a> <br>
-                                                <a>www.geocell.ge</a></p>
+                                                <div class="signature-div">
+                                                    <h3><em><u>Signature</u></em></h3>
+                                                    <p><span id="signature"><strong><%=currentUser.firstname + " " + currentUser.lastname%></strong></span><br>
+                                                    <%= currentUser.position %><br>
+                                                    <%= currentUser.office %><br>
+                                                    Mobile: <%= currentUser.tel %><br>
+                                                    <a><%= currentUser.username %></a><br>
+                                                    Geocell LLC., Part of Telia Company<br>
+                                                    3 Gotua Str. Right Side of the River Mtkvari,Tbilisi, 0160, Georgia<br>
+                                                    <a>www.teliacompany.com</a> <br>
+                                                    <a>www.geocell.ge</a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -133,59 +140,3 @@
 
 </section><!-- #content end -->
 <% include ../partials/footer.ejs %>
-<!-- Footer
-<!--============================================= -->-->
-<!--</div>-->
-<!--<footer id="footer" class="dark">-->
-
-
-
-    <!-- Copyrights
-<!--    ============================================= -->-->
-<!--    <div id="copyrights">-->
-
-<!--        <div class="container clearfix">-->
-
-<!--            <div class="col_half">-->
-<!--                Copyrights &copy; 2014 All Rights Reserved by Sula Inc.<br>-->
-<!--                <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>-->
-<!--            </div>-->
-
-<!--            <div class="clear"></div>-->
-
-<!--        </div>-->
-
-<!--    </div>-->
-
-<!--    </div><!-- #copyrights end -->-->
-
-
-<!--</footer><!-- #footer end -->-->
-
-<!--</div><!-- #wrapper end -->-->
-
-<!-- Go To Top
-<!--============================================= -->-->
-<!--<div id="gotoTop" class="icon-angle-up"></div>-->
-
-<!-- External JavaScripts
-<!--============================================= -->-->
-<!--<script type="text/javascript" src="../../js/jquery.js"></script>-->
-<!--<script type="text/javascript" src="../../js/plugins.js"></script>-->
-
-<!-- Footer Scripts
-<!--============================================= -->-->
-<!--<script type="text/javascript" src="../../js/functions.js"></script>-->
-<!--<script type="text/javascript" src="../../js/myJs.js"></script>-->
-
-<!--<script>-->
-<!--  $(document).ready(function() {-->
-<!--    $('.bt-editable').editable();-->
-
-
-
-<!--  });-->
-<!--</script>-->
-
-<!--</body>-->
-<!--</html>-->

@@ -16,7 +16,8 @@ var authRoutes = require('./routes/auth'),
     evoRoutes = require('./routes/evolution'),
     adminRoutes = require('./routes/admin'),
     profileRoutes = require('./routes/profile'),
-    officeRoutes = require('./routes/offices');
+    officeRoutes = require('./routes/offices'),
+    commentsRoutes = require('./routes/comments');
 
 app.use(session({
   secret: 'keyboard cat',
@@ -51,6 +52,7 @@ app.use(evoRoutes);
 app.use(adminRoutes);
 app.use(profileRoutes);
 app.use(officeRoutes);
+app.use(commentsRoutes);
 
 
 mongoose.Promise = global.Promise;

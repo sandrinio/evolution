@@ -18,17 +18,17 @@
 
     <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
     <link rel="stylesheet" href="../../css/bs-rating.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/select-boxes.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Select-Boxes CSS -->
-    <link rel="stylesheet" href="../../css/select-boxes.css" type="text/css" />
     <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
 
     <!-- Document Title
     ============================================= -->
-    <title>Evaluation</title>
+    <title>G-Shops</title>
 
 </head>
 
@@ -47,22 +47,12 @@
             <div class="container clearfix">
 
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-
-                <!-- Logo
-                ============================================= -->
-                <!--<div id="logo">-->
-                <!--<a href="/home" class="standard-logo" data-dark-logo="../../images/geocell-logo.png">-->
-                <!--<img src="../../images/geocell-logo.png">-->
-                <!--</a>-->
-                <!--<a href="/home" class="retina-logo" data-dark-logo="../../images/geocell-logo.png">-->
-                <!--<img src="../../images/geocell-logo.png" >-->
-                <!--</a>-->
-                <!--</div>-->
                 <% if(currentUser != undefined) { %>
                 <div id="top-account" class="dropdown">
-                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user"></i>    <%= currentUser.fullname %></a>
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <img src="../../uploads/userPictures/<%= currentUser.pic %>" class="user-nav-pic" ><%= currentUser.firstname + " " + currentUser.lastname %></a>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                        <li><a href="/profile">Profile</a></li>
+                        <li <% if(page_name === 'profile'){ %> class="profile-current" <% } %>><a href="/profile">Profile</a></li>
                         <li><a href="/logout">Logout <i class="icon-signout"></i></a></li>
                     </ul>
                 </div>
@@ -70,13 +60,14 @@
                 <!-- Primary Navigation
                 ============================================= -->
                 <nav id="primary-menu" class="style-3">
+
                     <ul>
-                        <li><a href="/home"><div>მთავარი</div></a></li>
-                        <% if(currentUser != undefined && currentUser.permission === 'Admin'){ %>
-                        <li><a href="/register"><div>რეგისტრაცია</div></a></li>
-                        <li><a href="/admin-panel"><div>ადმინ</div></a></li>
-                        <% } %>
-                        <li class="current"><a href="/evolution"><div>შეფასება</div></a></li>
+                        <li <% if(page_name === 'home'){ %> class="current" <% } %>><a href="/home"><div>მთავარი</div></a></li>
+                        <li <% if(page_name === 'offices'){ %> class="current" <% } %>><a href="/offices"><div>ოფისები</div></a></li>
+                        <li <% if(page_name === 'quiz'){ %> class="current" <% } %>><a href="/quiz"><div>ტესტი</div></a></li>
+                        <li <% if(page_name === 'Target'){ %> class="current" <% } %>><a href="/target"><div>გეგმა</div></a></li>
+                        <li <% if(page_name === 'stock'){ %> class="current" <% } %>><a href="/stock"><div>ნაშთი</div></a></li>
+                        <li <% if(page_name === 'evaluation'){ %> class="current" <% } %>><a href="/evolution"><div>შეფასება</div></a></li>
                     </ul>
                 </nav><!-- #primary-menu end -->
 
@@ -85,6 +76,16 @@
         </div>
 
     </header><!-- #header end -->
+    <% if(error && error.length > 0) { %>
+    <div class="alert alert-danger" role="alert">
+        <storng><%= error %></storng>
+    </div>
+    <% } %>
+    <% if(success && success.length > 0) { %>
+    <div class="alert alert-success" role="alert">
+        <strong><%= success %></strong>
+    </div>
+    <% } %>
 
                 <!-- Page Title
                 ============================================= -->
@@ -109,14 +110,17 @@
                             <div class="top-white-section">
                                 <div class="center">
                                     <h4>ვაფასებ:</h4>
-                                    <select name="evaluated" class="select-1 form-control">
+                                    <select name="evaluated" class="selectpicker form-control" data-live-search="true">
                                         <% users.forEach(function(user){ %>
-                                        <option><%= user.fullname %></option>
+                                        <% if(user.position !== 'NONE' && user.office !== 'NONE' ) { %>
+                                            <option><%= user.firstname + " " + user.lastname %></option>
+                                        <% } %>
                                         <% }); %>
                                     </select>
                                     <p id="totalScore"><strong><em></em></strong></p>
                                     <h4>ოფისი:</h4>
-                                    <select name="office" class="select-1 form-control">
+
+                                    <select name="office" class="selectpicker form-control" data-live-search="true">
                                         <option>რუსთაველი</option>
                                         <option>პიქსელი</option>
                                         <option>ცენტრალი</option>
@@ -316,16 +320,17 @@
 <!-- External JavaScripts
 ============================================= -->
 <script type="text/javascript" src="../../js/jquery.js"></script>
-<!--<script type="text/javascript" src="../../js/plugins.js"></script>-->
+<script type="text/javascript" src="../../js/plugins.js"></script>
 
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="../../js/functions.js"></script>
 <script type="text/javascript" src="../../js/star-rating.js"></script>
-<script type="text/javascript" src="../../js/myJs.js"></script>
+<!--<script type="text/javascript" src="../../js/myJs.js"></script>-->
 <!-- Select-Boxes Plugin -->
 <script type="text/javascript" src="../../js/select-boxes.js"></script>
-
+<script type="text/javascript" src="../../js/bs-select.js"></script>
+<link rel="stylesheet" href="../../css/bs-select.css" type="text/css" />
 <!-- Select-Splitter Plugin -->
 <script type="text/javascript" src="../../js/selectsplitter.js"></script>
 </body>

@@ -18,10 +18,9 @@ router.post('/register', function (req, res) {
     var userInfo = req.body.user;
     User.register(userInfo, req.body.password, function (err, user) {
       if(err){
-        res.send(err)
+        req.flash('error', err)
       }else{
         res.redirect('/home')
-         console.log(user)
       }
     })
   }else{

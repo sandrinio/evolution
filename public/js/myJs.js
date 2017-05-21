@@ -67,34 +67,34 @@ $(document).ready(function() {
 
    $(function() {
       // .daterange1
-      $(".daterange1").daterangepicker({
-         "buttonClasses": "button button-rounded button-mini nomargin",
-         "applyClass": "button-color",
-         "cancelClass": "button-light"
-      });
-
-      // .daterange2
-      $(".daterange2").daterangepicker({
-         "opens": "center",
-         timePicker: true,
-         timePickerIncrement: 30,
-         locale: {
-            format: 'MM/DD/YYYY h:mm A'
-         },
-         "buttonClasses": "button button-rounded button-mini nomargin",
-         "applyClass": "button-color",
-         "cancelClass": "button-light"
-      });
-
-      // .daterange3
-      $(".daterange3").daterangepicker({
-             singleDatePicker: true,
-             showDropdowns: true
-          },
-          function(start, end, label) {
-             var years = moment().diff(start, 'years');
-             alert("You are " + years + " years old.");
-          });
+      // $(".daterange1").daterangepicker({
+      //    "buttonClasses": "button button-rounded button-mini nomargin",
+      //    "applyClass": "button-color",
+      //    "cancelClass": "button-light"
+      // });
+      //
+      // // .daterange2
+      // $(".daterange2").daterangepicker({
+      //    "opens": "center",
+      //    timePicker: true,
+      //    timePickerIncrement: 30,
+      //    locale: {
+      //       format: 'MM/DD/YYYY h:mm A'
+      //    },
+      //    "buttonClasses": "button button-rounded button-mini nomargin",
+      //    "applyClass": "button-color",
+      //    "cancelClass": "button-light"
+      // });
+      //
+      // // .daterange3
+      // $(".daterange3").daterangepicker({
+      //        singleDatePicker: true,
+      //        showDropdowns: true
+      //     },
+      //     function(start, end, label) {
+      //        var years = moment().diff(start, 'years');
+      //        alert("You are " + years + " years old.");
+      //     });
 
       // reportrange
       function cb(start, end) {
@@ -102,42 +102,42 @@ $(document).ready(function() {
       }
       cb(moment().subtract(29, 'days'), moment());
 
-      $(".reportrange").daterangepicker({
-         "buttonClasses": "button button-rounded button-mini nomargin",
-         "applyClass": "button-color",
-         "cancelClass": "button-light",
-         ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-         }
-      }, cb);
+      // $(".reportrange").daterangepicker({
+      //    "buttonClasses": "button button-rounded button-mini nomargin",
+      //    "applyClass": "button-color",
+      //    "cancelClass": "button-light",
+      //    ranges: {
+      //       'Today': [moment(), moment()],
+      //       'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+      //       'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+      //       'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+      //       'This Month': [moment().startOf('month'), moment().endOf('month')],
+      //       'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+      //    }
+      // }, cb);
 
       // .daterange4
-      $(".daterange4").daterangepicker({
-         autoUpdateInput: false,
-         locale: {
-            cancelLabel: 'Clear'
-         },
-         "buttonClasses": "button button-rounded button-mini nomargin",
-         "applyClass": "button-color",
-         "cancelClass": "button-light"
-      });
-
-      $(".daterange4").on('apply.daterangepicker', function(ev, picker) {
-         $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-      });
-
-      $(".daterange4").on('cancel.daterangepicker', function(ev, picker) {
-         $(this).val('');
-      });
+      // $(".daterange4").daterangepicker({
+      //    autoUpdateInput: false,
+      //    locale: {
+      //       cancelLabel: 'Clear'
+      //    },
+      //    "buttonClasses": "button button-rounded button-mini nomargin",
+      //    "applyClass": "button-color",
+      //    "cancelClass": "button-light"
+      // });
+      //
+      // $(".daterange4").on('apply.daterangepicker', function(ev, picker) {
+      //    $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+      // });
+      //
+      // $(".daterange4").on('cancel.daterangepicker', function(ev, picker) {
+      //    $(this).val('');
+      // });
 
    });
    
-    $('.bt-editable').editable();
+    // $('.bt-editable').editable();
 
   var c1Val;
   var c2Val;
@@ -166,4 +166,49 @@ $(document).ready(function() {
       $('.links-container').slideToggle("fast");
    });
 
+   $('#show-upload-div').click(function () {
+      $('#collapsable').slideToggle('fast');
+   });
+
+   $("#input-8").fileinput({
+      mainClass: "input-group-md",
+      showUpload: true,
+      previewFileType: "image",
+      browseClass: "btn btn-success",
+      browseLabel: "Pick Image",
+      browseIcon: "<i class=\"icon-picture\"></i> ",
+      removeClass: "btn btn-danger",
+      removeLabel: "Delete",
+      removeIcon: "<i class=\"icon-trash\"></i> ",
+      uploadClass: "btn btn-info",
+      uploadLabel: "Upload",
+      uploadIcon: "<i class=\"icon-upload\"></i> "
+   });
+
+//    // modal part
+// // Get the modal
+//    var modal = document.getElementById('myModal');
+//
+// // Get the button that opens the modal
+//    var btn = document.getElementById("myBtn");
+//
+// Get the <span> element that closes the modal
+   var span = document.getElementsByClassName("close")[0];
+//
+// // When the user clicks on the button, open the modal
+//    btn.onclick = function() {
+//       modal.style.display = "block";
+//    };
+//
+// When the user clicks on <span> (x), close the modal
+   span.onclick = function() {
+      modal.style.display = "none";
+   };
+//
+// // When the user clicks anywhere outside of the modal, close it
+//    window.onclick = function(event) {
+//       if (event.target == modal) {
+//          modal.style.display = "none";
+//       }
+//    }
 });

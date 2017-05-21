@@ -67,5 +67,96 @@ textarea {
 
 #signature {
     font-size: 1.3em;
-    color: grey;
+    color: #522774;
+}
+.pass-change {
+    display: block;
+}
+
+.signature-div p {
+    line-height: 19px !important;
+}
+
+.user-div img {
+    float: left;
+}
+
+.user-info {
+    margin-left: 75px;
+}
+
+.user-info p {
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
+.user-info ul li {
+    font-size: 10px;
+    list-style: none;
+    text-emphasis: circle;
+}
+
+#userPic {
+    width: 70px
+}
+
+.user-nav-pic {
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+
+#margin-bot {
+    margin-bottom: 15px;
+}
+
+.del-form {
+    margin-bottom: 0;
+}
+
+#collapsable{
+    display: none;
+}
+
+.links ul li {
+    list-style-type: none;
+}
+
+/*MODAL PART*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
