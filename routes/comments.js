@@ -12,12 +12,13 @@ var middleware = require("../middleware");
 
 
 router.post("/home/:id/comments", function (req, res) {
+   console.log(req.body.comment);
    Posts.findById(req.params.id, function (err, foundPost) {
       if(err){
          req.flash("error", err);
          res.redirect("back")
       }else{
-         Comment.create(req.body.comment, function (err, newComment) {
+         Comment.create({text: req.body.comment}, function (err, newComment) {
             if(err){
                req.flash("error", err);
                res.redirect("back")
