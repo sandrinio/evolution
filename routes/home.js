@@ -135,14 +135,18 @@ router.post('/home/new-content', function (req, res) {
       req.flash('error', 'სათაური ან კონტენტი თავისუფალია');
       res.redirect('back')
    }else{
+      var x = 5;
+      for(i = 0; i < x; i++) {
    Posts.create(postContent, function (err, createdPost) {
       if(err){
          return console.log(err);
       }
+
       req.flash("success", "Good Job :)");
       res.redirect("/home");
    });
       }
+   }
 });
 router.delete("/home/:id", middleware.permissionChecker, function (req, res) {
    Posts.findByIdAndRemove(req.params.id, function (err, blogPost) {

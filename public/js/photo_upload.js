@@ -93,16 +93,16 @@ $(document).ready(function() {
       uploadFiles(formData);
    });
 
-   // var hidden = true;
+   var hidden = true;
 
-   // $('#collapse-upload-container').on('click', function () {
-   //
-   //    if(hidden == false){
-   //       $('#collapsable').hide(500);
-   //       hidden = true;
-   //    }else{
-   //       $('#collapsable').show(500);
-   //       hidden = false;
-   //    }
-   // });
+   $('#collapse-upload-container').on('click', function () {
+
+      if(hidden == false){
+         $('#collapsable').hide(500);
+         hidden = true;
+      }else{
+         $('#collapsable').show(500);
+         hidden = false;
+      }
+   });
 });
