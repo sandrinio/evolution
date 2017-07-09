@@ -7,7 +7,7 @@
                 <div class="content-wrap">
                 <button id="show-upload-div">ატვირთე</button>
                     <div id="collapsable">
-                        <!-- Photos upload Form -->
+                         Photos upload Form
                         <form id="upload-photos" method="post" action="/upload_photos" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="photos-input">File input</label>
@@ -16,7 +16,6 @@
                             <input type="hidden" name="csrf_token" value="just_a_text_field" />
                             <input class="btn btn-warning" type="submit" name="Photo Uploads" value="Upload Photos" />
                         </form>
-                        <!-- Progress Bar -->
                         <div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active"
@@ -28,6 +27,7 @@
                         <!-- Photos Album Container -->
                         <div id="album"></div>
                     </div>
+
                     <form action="/home/new-content" method="POST">
                         <div class="col-md-9" id="margin-bot">
                             <label for="new-post-text">სათაური:</label>
@@ -45,6 +45,7 @@
                                     <option>Other</option>
                                 </select>
                             </div>
+
                              <div class="clear"></div>
                         <textarea name="nPost[content]"></textarea>
                         <script>
@@ -59,6 +60,8 @@
             </div>
     </div>
 </section><!-- #content end -->
+
+
 
 
 <% include ../partials/footer.ejs %>

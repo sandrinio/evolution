@@ -167,3 +167,8 @@ textarea {
 .status-solv {
     color: green;
 }
+
+.bar {
+    height: 18px;
+    background: green;
+}
