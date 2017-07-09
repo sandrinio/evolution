@@ -56,6 +56,10 @@ router.get('/home/show/:id', function (req, res) {
    })
 });
 
+router.get('/home/request', function(req, res) {
+    res.render('/request/reqs')
+})
+
 router.post('/upload_photos', function (req, res){
    var photos = [],
        form = new formidable.IncomingForm();
@@ -135,17 +139,13 @@ router.post('/home/new-content', function (req, res) {
       req.flash('error', 'სათაური ან კონტენტი თავისუფალია');
       res.redirect('back')
    }else{
-      var x = 5;
-      for(i = 0; i < x; i++) {
    Posts.create(postContent, function (err, createdPost) {
       if(err){
          return console.log(err);
       }
-
       req.flash("success", "Good Job :)");
       res.redirect("/home");
    });
-      }
    }
 });
 router.delete("/home/:id", middleware.permissionChecker, function (req, res) {

@@ -23,6 +23,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
+    "pm2": "^2.5.0",
     "read-chunk": "^2.0.0"
   }
 }

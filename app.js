@@ -55,11 +55,25 @@ app.use(officeRoutes);
 app.use(commentsRoutes);
 
 
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
-// mongoose.connect("mongodb://localhost/gsm_guru");
-
+// mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
+// // mongoose.connect("mongodb://localhost/gsm_guru");
+// Using `mongoose.connect`...
+var promise = mongoose.connect('mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop', {
+  useMongoClient: true,
+  /* other options */
+});
+// Or `createConnection`
+var promise = mongoose.createConnection('mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop', {
+  useMongoClient: true,
+  /* other options */
+});
+promise.then(function(db) {
+  /* Use `db`, for instance `db.model()`
+});
+// Or, if you already have a connection
+connection.openUri('mongodb://localhost/myapp', { /* options */ });
 
 
 
