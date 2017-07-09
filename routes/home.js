@@ -10,7 +10,7 @@ var fs             = require('fs'),
 
 
 router.get('/home', function (req, res) {
-   Posts.find({}).sort('-date').exec(function (err, postContent) {
+   Posts.find({'status': 'solved'}).sort('-date').exec(function (err, postContent) {
       if(err){
          return req.flash('error', err)
       }
@@ -134,6 +134,7 @@ router.post('/home/new-content', function (req, res) {
       pic: req.user.pic,
       id: req.user._id
    };
+   postContent.status = '';
    console.log(postContent);
    if(postContent.title.length <= 1 && postContent.content <= 1){
       req.flash('error', 'სათაური ან კონტენტი თავისუფალია');

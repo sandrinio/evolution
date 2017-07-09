@@ -64,11 +64,10 @@
                 <!-- Primary Navigation
                 ============================================= -->
                 <nav id="primary-menu" class="style-3">
-
                     <ul>
-                        <li <% if(page_name === 'home'){ %> class="current" <% } %>><a href="/home"><div>ინსტრუქციები</div></a></li>
-                        <li <% if(page_name === 'home'){ %> class="current" <% } %>><a href="/request"><div>დასვი კითხვა</div></a></li>
-                        <li <% if(page_name === 'offices'){ %> class="current" <% } %>><a href="/offices"><div>ოფისები</div></a></li>
+                        <li <% if(page_name === 'home'){ %> class="current" <% } %>><a href="/home"><div>Solved</div></a></li>
+                        <li <% if(page_name === 'reqs'){ %> class="current" <% } %>><a href="/request"><div>Unsolved</div></a></li>
+                        <li <% if(page_name === 'offices'){ %> class="current" <% } %>><a href="/offices"><div>Offiecs</div></a></li>
                         <!--<li <% if(page_name === 'quiz'){ %> class="current" <% } %>><a href="/quiz"><div>ტესტი</div></a></li>-->
                         <!--<li <% if(page_name === 'target'){ %> class="current" <% } %>><a href="/target"><div>გეგმა</div></a></li>-->
                         <!--<li <% if(page_name === 'stock'){ %> class="current" <% } %>><a href="/stock"><div>ნაშთი</div></a></li>-->
@@ -79,7 +78,7 @@
             </div>
 
         </div>
-
+        
     </header><!-- #header end -->
     <% if(error && error.length > 0) { %>
     <div class="alert alert-danger alert-dismissable fade in"  role="alert">

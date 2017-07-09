@@ -17,7 +17,8 @@ var authRoutes = require('./routes/auth'),
     adminRoutes = require('./routes/admin'),
     profileRoutes = require('./routes/profile'),
     officeRoutes = require('./routes/offices'),
-    commentsRoutes = require('./routes/comments');
+    commentsRoutes = require('./routes/comments'),
+    requestsRoutes = require('./routes/requests');
 
 app.use(session({
   secret: 'keyboard cat',
@@ -53,27 +54,28 @@ app.use(adminRoutes);
 app.use(profileRoutes);
 app.use(officeRoutes);
 app.use(commentsRoutes);
+app.use(requestsRoutes);
 
 
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
-// mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
+mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
 // // mongoose.connect("mongodb://localhost/gsm_guru");
 // Using `mongoose.connect`...
-var promise = mongoose.connect('mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop', {
-  useMongoClient: true,
-  /* other options */
-});
-// Or `createConnection`
-var promise = mongoose.createConnection('mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop', {
-  useMongoClient: true,
-  /* other options */
-});
-promise.then(function(db) {
+// var promise = mongoose.connect('mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop', {
+//   useMongoClient: true,
+//   /* other options */
+// });
+// // Or `createConnection`
+// var promise = mongoose.createConnection('mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop', {
+//   useMongoClient: true,
+//   /* other options */
+// });
+// promise.then(function(db) {
   /* Use `db`, for instance `db.model()`
 });
 // Or, if you already have a connection
-connection.openUri('mongodb://localhost/myapp', { /* options */ });
+
 
 
 

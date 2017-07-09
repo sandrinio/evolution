@@ -25,6 +25,10 @@
                         <li><a href="#"><i class="icon-user"></i><%= result.author.firstname + " " + result.author.lastname %></a></li>
                         <li><i class="icon-folder-open"></i> <a href="#"><%= result.tag %></a></li>
                         <li><a href="#"><i class="icon-comments"></i><%= result.comments.length %></a></li>
+                        <li><a href="#"><i class="icon-comments"></i><% if(result.status === '') { %>
+                        Status: <span class='status-uns'>Unsolved </span>
+                        <% } else { %> Status: <span class='status-solv'>Sovled</span>
+                        <% } %> </a></li>
                     </ul><!-- .entry-meta end -->
 
                     <div class="line"></div>

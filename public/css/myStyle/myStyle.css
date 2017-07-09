@@ -160,3 +160,10 @@ textarea {
     text-decoration: none;
     cursor: pointer;
 }
+
+.status-uns {
+    color: red;
+}
+.status-solv {
+    color: green;
+}

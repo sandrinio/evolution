@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7763f47-229e-4259-b363-be3ec849bc06" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/blogUploads/1495389465007-background1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/blogUploads/1495389894489-10205955424663795.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/blogUploads/1495828801136-viber image.jpeg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/photo_upload.js" afterPath="$PROJECT_DIR$/public/js/photo_upload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/home.js" afterPath="$PROJECT_DIR$/routes/home.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,31 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="header.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/auth/login.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="120" column="35" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="35" />
+            <state relative-caret-position="1815">
+              <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,18 +32,28 @@
       <file leaf-file-name="photo_upload.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/photo_upload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="3" selection-end-line="100" selection-end-column="4" />
+            <state relative-caret-position="540">
+              <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myJs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/myJs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2625">
+              <caret line="175" column="14" lean-forward="false" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/main/new.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="150">
+              <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -151,9 +139,9 @@
         <option value="$PROJECT_DIR$/views/auth/login.ejs" />
         <option value="$PROJECT_DIR$/routes/comments.js" />
         <option value="$PROJECT_DIR$/views/main/home.ejs" />
+        <option value="$PROJECT_DIR$/views/main/new.ejs" />
         <option value="$PROJECT_DIR$/routes/home.js" />
         <option value="$PROJECT_DIR$/public/js/photo_upload.js" />
-        <option value="$PROJECT_DIR$/views/main/new.ejs" />
       </list>
     </option>
   </component>
@@ -187,6 +175,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,123 +188,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="evolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -484,11 +358,16 @@
       <workItem from="1495651041897" duration="2000" />
       <workItem from="1495651075230" duration="1814000" />
       <workItem from="1495819753671" duration="4844000" />
+      <workItem from="1496747023591" duration="486000" />
+      <workItem from="1496956978718" duration="2598000" />
+      <workItem from="1497516322757" duration="564000" />
+      <workItem from="1499368828974" duration="45000" />
+      <workItem from="1499593680931" duration="39000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215393000" />
+    <option name="totallyTimeSpent" value="219125000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -502,13 +381,13 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19539317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19539317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.50277996" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32599118" sideWeight="0.49722" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32599118" sideWeight="0.49722" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -528,7 +407,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -723,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/evolution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-632">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/office/offices.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -756,7 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="134" column="10" lean-forward="false" selection-start-line="134" selection-start-column="10" selection-end-line="134" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -799,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
           <caret line="185" column="33" lean-forward="true" selection-start-line="174" selection-start-column="20" selection-end-line="185" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,15 +691,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="0">
           <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-549">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,46 +719,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/myJs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1321">
-          <caret line="102" column="23" lean-forward="false" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/photo_upload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="3" selection-end-line="100" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="120" column="35" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/auth/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
+        <state relative-caret-position="900">
           <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/evolution.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/myJs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="175" column="14" lean-forward="false" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/main/new.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        <state relative-caret-position="150">
+          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/photo_upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1815">
+          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding />
         </state>
       </provider>
