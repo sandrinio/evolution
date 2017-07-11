@@ -11,12 +11,13 @@
                     <li><a href="#"><div id="show-links">ლინკები</div></a></li>
                     <li><a href="#"><div>ფორმები</div></a>
                         <ul>
-                            <li><a href="/home/google-reg"><div>Google</div></a></li>
-                            <li><a href="/home/apple-reg"><div>App Store</div></a></li>
-                            <li><a href="#"><div>Windows</div></a></li>
+                            <li><a href="/home/google-reg" target="_blank"><div>Google</div></a></li>
+                            <li><a href="/home/apple-reg" target="_blank"><div>App Store</div></a></li>
                         </ul>
                     </li>
-                    <li><a href="/register"><div>New User</div></a></li>
+                    <% if(currentUser.permission === 'Admin') { %>
+                    <li><a href="/register" target="_blank"><div>New User</div></a></li>
+                    <% } %>
                 </ul>
             </nav>
 
@@ -141,12 +142,12 @@
                                     <tbody>
                                     <% postContent.forEach(function(content) { %>
                                     <tr>
-                                        <td><a href="/home/show/<%= content._id %>"><%= content.title %></a></td>
+                                        <td><a href="/home/show/<%= content._id %>"><%= content.title %></a><span class="pull-right"><i class="icon-comments"></i>    <%= content.comments.length %></span></td>
                                         <td><%= content.tag %></td>
                                         <td><%= content.author.firstname + " " + content.author.lastname %></td>
                                         <td><%= content.date.toDateString() %></td>
                                         <td><a href="/home/show/<%= content._id %>">More</a><% if(currentUser.permission === 'Admin'){ %>
-                                            <a class="label label-warning" href="#">Edit</a>
+                                            <a class="label label-warning" href="/post/<%= content._id %>/edit">Edit</a>
                                             <form class="inline-block del-form" action="/home/<%= content._id %>?_method=delete" method="POST"><button class="label label-danger" href="#">Del</button></form> <% } %> </td>
                                     </tr>
                                     <% }) %>

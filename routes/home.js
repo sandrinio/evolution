@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Posts = require('../models/post');
+var User = require('../models/user');
 var path = require('path');
 var middleware = require('../middleware');
 var fs             = require('fs'),
@@ -20,6 +21,18 @@ router.get('/home', function (req, res) {
                      });
 });
 
+router.get('/instructions', function (req, res) {
+   Posts.find({'status': 'Instruction'}).sort('date').exec(function (err, postContent) {
+      if(err){
+         return req.flash('error', err)
+      }
+      res.render('requests/instructions', {
+         page_name: 'instructions',
+         reqsContent: postContent
+      })
+   })
+});
+
 router.get('/home/apple-reg', function (req, res) {
    res.render('main/apple') 
 });
@@ -29,7 +42,7 @@ router.get('/home/google-reg', function (req, res) {
 });
 
 router.get('/home/new-post', function (req, res) {
-   res.render('main/new', { page_name: 'home' });
+   res.render('main/new', { page_name: 'none' });
 });
 
 router.get('/quiz', function (req, res) {
@@ -50,15 +63,12 @@ router.get('/home/show/:id', function (req, res) {
          return req.flash(err)
       }
       res.render('main/show', {
-         page_name: 'home',
+         page_name: 'none',
          result: result
       })
    })
 });
 
-router.get('/home/request', function(req, res) {
-    res.render('/request/reqs')
-})
 
 router.post('/upload_photos', function (req, res){
    var photos = [],
@@ -140,7 +150,6 @@ router.post('/home/new-content', function (req, res) {
          postContent.status = req.body.status;
       }
 
-   console.log(postContent);
    if(postContent.title.length <= 1 && postContent.content <= 1){
       req.flash('error', 'სათაური ან კონტენტი თავისუფალია');
       res.redirect('back')
@@ -149,8 +158,22 @@ router.post('/home/new-content', function (req, res) {
       if(err){
          return console.log(err);
       }
-      req.flash("success", "Good Job :)");
-      res.redirect("/home");
+      var postCount = Number;
+      if(req.user.posts == undefined){
+         postCount = 1
+      }else{
+         postCount = req.user.posts + 1
+      }
+      var finalCount = { posts: postCount };
+
+      User.findByIdAndUpdate(req.user._id, finalCount, function (err, user) {
+         if(err){
+            return req.flash("error", err)
+         }
+         req.flash("success", "Good Job :)");
+         res.redirect("/home/show/" + createdPost.id);
+      })
+
    });
    }
 });

@@ -20,7 +20,7 @@ router.post('/register', function (req, res) {
       if(err){
         req.flash('error', err)
       }else{
-        res.redirect('/home')
+        res.redirect('/instructions')
       }
     })
   }else{
@@ -29,11 +29,11 @@ router.post('/register', function (req, res) {
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/home",
+  successRedirect: "/instructions",
   failureRedirect: "/"
 }), function (req, res) {
   res.flash("success", 'Welcome');
-  res.redirect("/home");
+  res.redirect("/instructions");
 });
 
 router.get("/logout", function (req, res) {

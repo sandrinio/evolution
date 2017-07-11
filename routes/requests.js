@@ -16,15 +16,15 @@ router.get('/request', (req, res) => {
     });
 })
 
-router.get('/request/:id/edit', function (req, res) {
+router.get('/post/:id/edit', function (req, res) {
    Post.findById(req.params.id, function (err, result) {
       if(err){
-         req.flash('Error', err)
+         req.flash('Error', err);
          console.log(err)
       }else{
          res.render('requests/edit', {
             result: result,
-            page_name: 'reqs'
+            page_name: 'none'
          })
       }
    })
@@ -32,8 +32,12 @@ router.get('/request/:id/edit', function (req, res) {
 });
 
 router.put('/request/:id/edit', function (req, res) {
-   Post.findByIdAndChange(req.params.id, req.body.nPost, function (err, result) {
-
+   Post.findByIdAndUpdate(req.params.id, req.body.nPost, function (err, result) {
+      if(err){
+         console.log(err)
+      }else{
+         res.redirect('/home/show/' + req.params.id)
+      }
    })
 });
 

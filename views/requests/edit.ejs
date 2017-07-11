@@ -28,10 +28,10 @@
                     <div id="album"></div>
                 </div>
 
-                <form action="/home/new-content" method="POST">
+                <form action="/request/<%= result._id %>/edit?_method=PUT" method="POST">
                     <div class="col-md-6" id="margin-bot">
                         <label for="new-post-text">სათაური:</label>
-                        <input type="text" name="nPost[title]" id="new-post-text" aria-required="true" class="required sm-form-control">
+                        <input type="text" name="nPost[title]" id="new-post-text" aria-required="true" class="required sm-form-control" value="<%= result.title %>">
                     </div>
                     <% if(currentUser.permission === 'Admin'){ %>
                     <div class="col-md-3" id="margin-bot">
@@ -39,12 +39,14 @@
                         <select class="selectpicker" name="status">
                             <option>Unsolved</option>
                             <option>Solved</option>
+                            <option>Instruction</option>
                         </select>
                     </div>
                     <% } %>
                     <div class="col-md-3" id="margin-bot">
                         <label for="new-post">Tag:</label>
                         <select class="selectpicker" id="new-post" name="nPost[tag]">
+                            <option><%= result.tag %></option>
                             <option>Android</option>
                             <option>Apple</option>
                             <option>Windows</option>
@@ -56,7 +58,7 @@
                     </div>
 
                     <div class="clear"></div>
-                    <textarea name="nPost[content]"></textarea>
+                    <textarea name="nPost[content]"><%- result.content %></textarea>
                     <script>
                        CKEDITOR.replace('nPost[content]');
                     </script>

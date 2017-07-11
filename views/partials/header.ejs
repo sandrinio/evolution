@@ -51,7 +51,7 @@
             <div class="container clearfix">
 
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-                <% if(currentUser != undefined) { %>
+                <% if(currentUser != undefined || page_name === 'none') { %>
                 <div id="top-account" class="dropdown">
                     <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <img src="../../uploads/userPictures/<%= currentUser.pic %>" class="user-nav-pic" ><%= currentUser.firstname + " " + currentUser.lastname %></a>
@@ -65,9 +65,10 @@
                 ============================================= -->
                 <nav id="primary-menu" class="style-3">
                     <ul>
+                        <li <% if(page_name === 'instructions'){ %> class="current" <% } %>><a href="/instructions"><div>Knowledge Hub</div></a></li>
                         <li <% if(page_name === 'home'){ %> class="current" <% } %>><a href="/home"><div>Solved</div></a></li>
-                        <li <% if(page_name === 'reqs'){ %> class="current" <% } %>><a href="/request"><div>Unsolved</div></a></li>
-                        <li <% if(page_name === 'offices'){ %> class="current" <% } %>><a href="/offices"><div>Offiecs</div></a></li>
+                        <li <% if(page_name === 'reqs'){ %> class="current" <% } %>><a href="/request"><div>Requests</div></a></li>
+                        <li <% if(page_name === 'offices'){ %> class="current" <% } %>><a href="/offices"><div>Offices</div></a></li>
                         <!--<li <% if(page_name === 'quiz'){ %> class="current" <% } %>><a href="/quiz"><div>ტესტი</div></a></li>-->
                         <!--<li <% if(page_name === 'target'){ %> class="current" <% } %>><a href="/target"><div>გეგმა</div></a></li>-->
                         <!--<li <% if(page_name === 'stock'){ %> class="current" <% } %>><a href="/stock"><div>ნაშთი</div></a></li>-->

@@ -30,11 +30,13 @@
                         <% } else {%>
                         <li><a href="#"><i class="icon-warning-sign"></i>Status: <span class="status-uns">Unsolved</span></a></li>
                         <% } %>
+                        <% if(currentUser.permission === 'Admin'){ %>
+                        <li><a href="/post/<%= result.id %>/edit"><i class="icon-edit"></i>Edit</a></li>
+                        <% } %>
                     </ul><!-- .entry-meta end -->
 
                     <div class="line"></div>
                         <%- result.content %>
-
                     <div class="line"></div>
 
 

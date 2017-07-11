@@ -27,12 +27,14 @@
                             <div class="tabs tabs-alt clearfix" id="tabs-profile">
 
                                 <ul class="tab-nav clearfix">
-                                    <li><a href="#tab-feeds"><i class="icon-rss2"></i>ჩემი შეფასებულები</a></li>
-                                    <li><a href="#tab-settings"><i class="icon-pencil2"></i>პარამეტრები</a></li>
+                                    <% if(currentUser.permission === 'Admin'){ %>
+                                    <li><a href="#tab-feeds"><i class="icon-user"></i>Users</a></li>
+                                    <% } %>
+                                    <li><a href="#tab-settings"><i class="icon-cog"></i>Settings</a></li>
                                 </ul>
 
                                 <div class="tab-container">
-
+                                    <% if(currentUser.permission === 'Admin'){ %>
                                     <div class="tab-content clearfix" id="tab-feeds">
 
                                         <div class="table-responsive">
@@ -40,16 +42,26 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Name</th>
+                                                    <th>Position</th>
                                                     <th>Office</th>
-                                                    <th>Date</th>
+                                                    <th>TEL</th>
+                                                    <th>Permission</th>
+                                                    <th>Posts</th>
+                                                    <th>Comments</th>
+                                                    <th>Link</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <% evaluations.forEach(function(eval){ %>
+                                                <% user.forEach(function(usr){ %>
                                                 <tr>
-                                                    <td><%= eval.evaluated %></td>
-                                                    <td><%= eval.office %></td>
-                                                    <td><%= eval.date.toDateString() %></td>
+                                                    <td><%= usr.firstname + " " + usr.lastname %></td>
+                                                    <td><%= usr.position %></td>
+                                                    <td><%= usr.office %></td>
+                                                    <td><%= usr.tel %></td>
+                                                    <td><%= usr.permission %></td>
+                                                    <td><%= usr.posts %></td>
+                                                    <td><%= usr.comments %></td>
+                                                    <td><a href="/userdetales/<%= usr._id %>">More</a></td>
                                                 </tr>
                                                 <% }) %>
                                                 </tbody>
@@ -57,6 +69,7 @@
                                         </div>
 
                                     </div>
+                                    <% } %>
                                     <div class="tab-content clearfix" id="tab-settings">
                                         <div class="row topmargin-sm clearfix">
                                             <div class="col-xs-12 bottommargin-sm">
@@ -83,12 +96,12 @@
                                                         <label for="exampleInputName2">Tel:</label>
                                                         <input type="text" name="user[tel]" class="form-control" id="exampleInputName2" value="<%= currentUser.tel %>">
                                                     </div>
+                                                    <!--<div class="form-group">-->
+                                                        <!--<label for="exampleInputName10">Position:</label>-->
+                                                        <!--<input type="text" name="user[position]" class="form-control" id="exampleInputName10" value="<%= currentUser.position %>">-->
+                                                    <!--</div>-->
                                                     <div class="form-group">
-                                                        <label for="exampleInputName10">Position:</label>
-                                                        <input type="text" name="user[position]" class="form-control" id="exampleInputName10" value="<%= currentUser.position %>">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Office: <%= currentUser.office %></label>
+                                                        <label>Current Office: <%= currentUser.office %></label>
                                                         <select name="user[office]" class="select-1 form-control">
                                                             <option>Vake Shop           </option>
                                                             <option>Central Shop        </option>

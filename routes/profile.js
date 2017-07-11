@@ -19,20 +19,32 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get('/profile', middleware.isLoggedIn, function (req, res) {
-  Eva.find({'author.fullname': req.user.fullname}).sort('-date').exec(function (err, eval) {
+  User.find({}).sort('-date').exec(function (err, user) {
     if(err){
       return console.log(err)
     }
-    res.render('auth/profile', { evaluations: eval,
+    res.render('auth/profile', { user: user,
                                  page_name: 'profile'
                                  })
   });
 });
 
+router.get('/userdetales/:id', function (req, res) {
+   User.findById(req.params.id, function (err, user) {
+      if(err){
+         return req.flash('error', err)
+      }
+      res.render('auth/show', {
+         page_name: 'none',
+         user: user
+      })
+   })
+});
+
 router.post('/pass-change', middleware.isLoggedIn, function (req, res) {
   req.user.setPassword(req.body.password, function (err, success) {
     if(err){
-      res.send(err)
+      console.log(err)
     }else{
       success.save();
       console.log(success);
@@ -63,6 +75,26 @@ router.put("/avatar", upload.single('user[pic]'), function (req, res) {
          res.redirect("back")
       }
    });
+});
+
+router.put('/user/:id/update', function (req, res) {
+   User.findByIdAndUpdate(req.params.id, req.body.userInfo, function (err, updated) {
+      if(err){
+         return console.log(err)
+      }
+      req.flash('success', 'Updated');
+      res.redirect('/userdetales/'+ updated._id)
+   })
+});
+
+router.delete('/user/:id/delete', function (req, res) {
+   User.findByIdAndRemove(req.params.id, function (err, deleted) {
+      if(err){
+         return req.flash("error", err)
+      }
+      req.flash('success', deleted.firstname + " deleted")
+      res.redirect('/profile')
+   })
 });
 
 

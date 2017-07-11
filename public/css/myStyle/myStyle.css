@@ -176,3 +176,7 @@ textarea {
 #show-upload-div {
     margin-left: 17px;
 }
+
+.user-del-form {
+    margin-bottom: 0;
+}

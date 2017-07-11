@@ -13,7 +13,9 @@ var UserSchema = new mongoose.Schema({
    office: String,
    position: String,
    pic: String,
-   score: []
+   score: [],
+   posts: Number,
+   comments: Number
 });
 
 UserSchema.plugin(passportLocalMongoose);

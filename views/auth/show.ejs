@@ -1,0 +1,159 @@
+<% include ../partials/header.ejs %>
+
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+        <div class="section">
+            <div class="container clearfix">
+                <div class="row clearfix">
+                    <div class="col-sm-9">
+
+                        <img src="../../uploads/userPictures/<%= user.pic %>"
+                             class="alignleft img-circle img-thumbnail notopmargin nobottommargin" alt="Avatar" style="max-width: 84px;">
+                        <div class="heading-block noborder">
+                            <h3><%= user.firstname + " " + user.lastname %></h3>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <div class="row clearfix">
+
+                            <div class="col-md-12">
+
+                                <div class="tabs tabs-alt clearfix" id="tabs-profile">
+
+                                    <ul class="tab-nav clearfix">
+                                        <% if(currentUser.permission === 'Admin'){ %>
+                                        <li><a href="#tab-feeds"><i class="icon-rss2"></i>User Info</a></li>
+                                        <% } %>
+                                    </ul>
+
+                                    <div class="tab-container">
+                                        <% if(currentUser.permission === 'Admin'){ %>
+                                        <div class="tab-content clearfix" id="tab-feeds">
+
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-striped">
+                                                    <form action="/user/<%= user._id %>/update?_method=PUT" method="POST" class="pull-right">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>
+
+                                                        </th>
+                                                        <th>Info</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>First Name</td>
+                                                        <td><input name="userInfo[firstname]" type="text" value="<%= user.firstname %>"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Last Name</td>
+                                                        <td><input name="userInfo[lastname]" type="text" value="<%= user.lastname %>"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mail</td>
+                                                        <td><input name="userInfo[username]" type="text" value="<%= user.username %>"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Position</td>
+                                                        <td><select name="userInfo[position]">
+                                                                <option><%= user.position %></option>
+                                                                <option>Consultant</option>
+                                                                <option>Senior Consultant</option>
+                                                                <option>Operator</option>
+                                                                <option>Supervisor</option>
+                                                                <option>NONE</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Office</td>
+                                                        <td>
+                                                            <select name="userInfo[office]">
+                                                                <options><%= user.office %></options>
+                                                                <option>Vake Shop           </option>
+                                                                <option>Central Shop        </option>
+                                                                <option>Gldani Shop         </option>
+                                                                <option>Marjanishvili Shop  </option>
+                                                                <option>Rustaveli Shop      </option>
+                                                                <option>Avlabari Shop       </option>
+                                                                <option>Pekini Shop         </option>
+                                                                <option>Kostava Shop        </option>
+                                                                <option>Ortachala Shop      </option>
+                                                                <option>Varketili Shop      </option>
+                                                                <option>NONE                </option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mobile</td>
+                                                        <td><input name="userInfo[tel]" type="text" value="<%= user.mobile %>"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Permission</td>
+                                                        <td>
+                                                            <select name="userInfo[permission]">
+                                                                <option><%= user.permission %></option>
+                                                                <option>User</option>
+                                                                <option>Admin</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Birthday</td>
+                                                        <td><input name="userInfo[bday]" type="text" value="<%= user.bday %>"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Posts</td>
+                                                        <td><%= user.posts %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Comments</td>
+                                                        <td><%=user.comments%></td>
+                                                    </tr>
+                                                    </tr>
+                                                    </tbody>
+                                                        <button class="btn btn-success">Update User</button>
+                                                    </form>
+                                                </table>
+                                                <form action="/user/<%=user._id%>/delete?_method=DELETE" method="POST" class="user-del-form pull-left">
+                                                    <button class="btn btn-danger">Delete User</button>
+                                                </form>
+
+
+
+                                            </div>
+
+                                        </div>
+                                        <% } %>
+                                        <div class="tab-content clearfix" id="tab-settings">
+                                            <div class="row topmargin-sm clearfix">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="line visible-xs-block"></div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section><!-- #content end -->
+<% include ../partials/footer.ejs %>

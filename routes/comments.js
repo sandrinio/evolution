@@ -5,6 +5,7 @@ var express = require("express");
 var router = express.Router();
 var Comment = require("../models/comment");
 var Posts = require("../models/post");
+var User = require("../models/user");
 var middleware = require("../middleware");
 
 
@@ -32,8 +33,22 @@ router.post("/home/:id/comments", function (req, res) {
                foundPost.comments.push(newComment);
                foundPost.save();
             }
+            var commentsCount = Number;
+            if(req.user.comments == undefined){
+               commentsCount = 1;
+            }else{
+               commentsCount = req.user.comments + 1;
+            }
+            var finalCount = { comments: commentsCount };
+            console.log(finalCount)
+            User.findByIdAndUpdate(req.user._id, finalCount, function (err, result) {
+               if(err){
+                  return console.log(err)
+               }
+               res.redirect("/home/show/" + req.params.id);
+            })
          });
-         res.redirect("/home/show/" + req.params.id);
+
       }
    })
 });
