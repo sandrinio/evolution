@@ -172,3 +172,7 @@ textarea {
     height: 18px;
     background: green;
 }
+
+#show-upload-div {
+    margin-left: 17px;
+}

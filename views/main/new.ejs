@@ -5,7 +5,7 @@
     <div class="content-wrap">
             <div class="container clearfix">
                 <div class="content-wrap">
-                <button id="show-upload-div">ატვირთე</button>
+                <button class="button button-small" id="show-upload-div">ატვირთე</button>
                     <div id="collapsable">
                          Photos upload Form
                         <form id="upload-photos" method="post" action="/upload_photos" enctype="multipart/form-data">
@@ -29,10 +29,19 @@
                     </div>
 
                     <form action="/home/new-content" method="POST">
-                        <div class="col-md-9" id="margin-bot">
+                        <div class="col-md-6" id="margin-bot">
                             <label for="new-post-text">სათაური:</label>
                             <input type="text" name="nPost[title]" id="new-post-text" aria-required="true" class="required sm-form-control">
                         </div>
+                        <% if(currentUser.permission === 'Admin'){ %>
+                        <div class="col-md-3" id="margin-bot">
+                            <label for="new-post-text">სტატუსი:</label>
+                            <select class="selectpicker" name="status">
+                                <option>Unsolved</option>
+                                <option>Solved</option>
+                            </select>
+                        </div>
+                        <% } %>
                             <div class="col-md-3" id="margin-bot">
                                 <label for="new-post">Tag:</label>
                                 <select class="selectpicker" id="new-post" name="nPost[tag]">
