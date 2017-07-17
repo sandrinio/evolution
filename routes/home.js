@@ -8,6 +8,9 @@ var fs             = require('fs'),
     formidable     = require('formidable'),
     readChunk      = require('read-chunk'),
     fileType       = require('file-type');
+var mailer         = require('../middleware/mails')
+
+
 
 
 router.get('/home', function (req, res) {

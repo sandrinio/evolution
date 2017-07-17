@@ -6,6 +6,7 @@ var middleware = require("../middleware");
 
 
 router.get('/', function (req, res) {
+   req.flash('success', 'hello');
   res.render('auth/login')
 });
 

@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var middleware = require('../middleware');
-let Post = require('../models/post')
+let Post = require('../models/post');
+var mailer = require('../middleware/mails');
 
 router.get('/request', (req, res) => {
     Post.find({'status': '' || 'Unsolved' || 'undefined'}).sort('-date').exec(function (err, reqsContent){
@@ -36,6 +37,19 @@ router.put('/request/:id/edit', function (req, res) {
       if(err){
          console.log(err)
       }else{
+         var Options = {
+            from: 'Sandro Suladze',
+            to: 'sandro.suladze@gmail.com',
+            subject: result.title,
+            html: result.content
+         };
+         mailer.transporter.sendMail(Options, function (err, info) {
+            if(error){
+               return console.log(error)
+            }
+            console.log('Mail has been sent');
+            console.log(info)
+         });
          res.redirect('/home/show/' + req.params.id)
       }
    })
