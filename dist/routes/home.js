@@ -1,48 +1,47 @@
+'use strict';
+
 var express = require('express');
 var router = express.Router();
 var Posts = require('../models/post');
 var User = require('../models/user');
 var path = require('path');
 var middleware = require('../middleware');
-var fs             = require('fs'),
-    formidable     = require('formidable'),
-    readChunk      = require('read-chunk'),
-    fileType       = require('file-type');
-var mailer         = require('../middleware/mails')
-
-
-
+var fs = require('fs'),
+    formidable = require('formidable'),
+    readChunk = require('read-chunk'),
+    fileType = require('file-type');
+var mailer = require('../middleware/mails');
 
 router.get('/home', function (req, res) {
-   Posts.find({'status': 'Solved'}).sort('-date').exec(function (err, postContent) {
-      if(err){
-         return req.flash('error', err)
+   Posts.find({ 'status': 'Solved' }).sort('-date').exec(function (err, postContent) {
+      if (err) {
+         return req.flash('error', err);
       }
 
       res.render('main/home', {
-                           page_name: 'home',
-                           postContent: postContent })
-                     });
+         page_name: 'home',
+         postContent: postContent });
+   });
 });
 
 router.get('/instructions', function (req, res) {
-   Posts.find({'status': 'Instruction'}).sort('date').exec(function (err, postContent) {
-      if(err){
-         return req.flash('error', err)
+   Posts.find({ 'status': 'Instruction' }).sort('date').exec(function (err, postContent) {
+      if (err) {
+         return req.flash('error', err);
       }
       res.render('requests/instructions', {
          page_name: 'instructions',
          reqsContent: postContent
-      })
-   })
+      });
+   });
 });
 
 router.get('/home/apple-reg', function (req, res) {
-   res.render('main/apple') 
+   res.render('main/apple');
 });
 
 router.get('/home/google-reg', function (req, res) {
-   res.render('main/google') 
+   res.render('main/google');
 });
 
 router.get('/home/new-post', function (req, res) {
@@ -63,18 +62,17 @@ router.get('/target', function (req, res) {
 
 router.get('/home/show/:id', function (req, res) {
    Posts.findById(req.params.id).populate("comments").exec(function (err, result) {
-      if(err){
-         return req.flash(err)
+      if (err) {
+         return req.flash(err);
       }
       res.render('main/show', {
          page_name: 'none',
          result: result
-      })
-   })
+      });
+   });
 });
 
-
-router.post('/upload_photos', function (req, res){
+router.post('/upload_photos', function (req, res) {
    var photos = [],
        form = new formidable.IncomingForm();
 
@@ -125,12 +123,12 @@ router.post('/upload_photos', function (req, res){
       }
    });
 
-   form.on('error', function(err) {
+   form.on('error', function (err) {
       console.log('Error occurred during processing - ' + err);
    });
 
    // Invoked when all the fields have been processed.
-   form.on('end', function() {
+   form.on('end', function () {
       console.log('All the request fields have been processed.');
    });
 
@@ -148,44 +146,43 @@ router.post('/home/new-content', function (req, res) {
       pic: req.user.pic,
       id: req.user._id
    };
-      if(req.body.status == undefined){
-      postContent.status = 'Unsolved'
-      } else {
-         postContent.status = req.body.status;
-      }
+   if (req.body.status == undefined) {
+      postContent.status = 'Unsolved';
+   } else {
+      postContent.status = req.body.status;
+   }
 
-   if(postContent.title.length <= 1 && postContent.content <= 1){
+   if (postContent.title.length <= 1 && postContent.content <= 1) {
       req.flash('error', 'სათაური ან კონტენტი თავისუფალია');
-      res.redirect('back')
-   }else{
-   Posts.create(postContent, function (err, createdPost) {
-      if(err){
-         return console.log(err);
-      }
-      var postCount = Number;
-      if(req.user.posts == undefined){
-         postCount = 1
-      }else{
-         postCount = req.user.posts + 1
-      }
-      var finalCount = { posts: postCount };
-
-      User.findByIdAndUpdate(req.user._id, finalCount, function (err, user) {
-         if(err){
-            return req.flash("error", err)
+      res.redirect('back');
+   } else {
+      Posts.create(postContent, function (err, createdPost) {
+         if (err) {
+            return console.log(err);
          }
-         req.flash("success", "Good Job :)");
-         res.redirect("/home/show/" + createdPost.id);
-      })
+         var postCount = Number;
+         if (req.user.posts == undefined) {
+            postCount = 1;
+         } else {
+            postCount = req.user.posts + 1;
+         }
+         var finalCount = { posts: postCount };
 
-   });
+         User.findByIdAndUpdate(req.user._id, finalCount, function (err, user) {
+            if (err) {
+               return req.flash("error", err);
+            }
+            req.flash("success", "Good Job :)");
+            res.redirect("/home/show/" + createdPost.id);
+         });
+      });
    }
 });
 router.delete("/home/:id", middleware.permissionChecker, function (req, res) {
    Posts.findByIdAndRemove(req.params.id, function (err, blogPost) {
-      if(err){
-         console.log(err)
-      }else{
+      if (err) {
+         console.log(err);
+      } else {
          req.flash("success", blogPost.title + " " + "has been removed");
          res.redirect("back");
       }
@@ -193,3 +190,4 @@ router.delete("/home/:id", middleware.permissionChecker, function (req, res) {
 });
 
 module.exports = router;
+//# sourceMappingURL=home.js.map
