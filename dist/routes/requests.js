@@ -6,7 +6,7 @@ var middleware = require('../middleware');
 var Post = require('../models/post');
 var mailer = require('../middleware/mails');
 
-router.get('/request', function (req, res) {
+router.get('/request', middleware.isLoggedIn, function (req, res) {
    Post.find({ 'status': '' || 'Unsolved' || 'undefined' }).sort('-date').exec(function (err, reqsContent) {
       if (err) {
          return console.log(err);

@@ -60,3 +60,6 @@ typings/
 .env
 
 
+/models/
+/public/uploads/blogUploads/
+/public/uploads/userPictures/

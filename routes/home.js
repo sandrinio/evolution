@@ -13,7 +13,7 @@ var mailer         = require('../middleware/mails')
 
 
 
-router.get('/home', function (req, res) {
+router.get('/home', middleware.isLoggedIn, function (req, res) {
    Posts.find({'status': 'Solved'}).sort('-date').exec(function (err, postContent) {
       if(err){
          return req.flash('error', err)
@@ -25,7 +25,7 @@ router.get('/home', function (req, res) {
                      });
 });
 
-router.get('/instructions', function (req, res) {
+router.get('/instructions', middleware.isLoggedIn, function (req, res) {
    Posts.find({'status': 'Instruction'}).sort('date').exec(function (err, postContent) {
       if(err){
          return req.flash('error', err)
@@ -61,7 +61,7 @@ router.get('/target', function (req, res) {
    res.render('main/coming_soon');
 });
 
-router.get('/home/show/:id', function (req, res) {
+router.get('/home/show/:id', middleware.isLoggedIn, middleware.isLoggedIn, function (req, res) {
    Posts.findById(req.params.id).populate("comments").exec(function (err, result) {
       if(err){
          return req.flash(err)
@@ -140,7 +140,7 @@ router.post('/upload_photos', function (req, res){
    });
 });
 
-router.post('/home/new-content', function (req, res) {
+router.post('/home/new-content', middleware.isLoggedIn, function (req, res) {
    var postContent = req.body.nPost;
    postContent.author = {
       firstname: req.user.firstname,
