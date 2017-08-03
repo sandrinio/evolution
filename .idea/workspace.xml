@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7763f47-229e-4259-b363-be3ec849bc06" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codekeeper.ejs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/routes/home.js" afterPath="$PROJECT_DIR$/dist/routes/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/routes/home.js.map" afterPath="$PROJECT_DIR$/dist/routes/home.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/routes/requests.js" afterPath="$PROJECT_DIR$/dist/routes/requests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/routes/requests.js.map" afterPath="$PROJECT_DIR$/dist/routes/requests.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/home.js" afterPath="$PROJECT_DIR$/routes/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/requests.js" afterPath="$PROJECT_DIR$/routes/requests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/requests/instructions.ejs" afterPath="$PROJECT_DIR$/views/requests/instructions.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -282,6 +275,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evolution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evolution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -471,12 +478,12 @@
       <workItem from="1501313070331" duration="35000" />
       <workItem from="1501356624796" duration="1670000" />
       <workItem from="1501700579971" duration="1047000" />
-      <workItem from="1501755596992" duration="1125000" />
+      <workItem from="1501755596992" duration="1460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263481000" />
+    <option name="totallyTimeSpent" value="263816000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
