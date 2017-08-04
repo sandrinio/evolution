@@ -1,15 +1,16 @@
+"use strict";
+
 var express = require("express");
 var app = express();
 
-var mongoose     = require("mongoose"),
-  passport       = require("passport"),
-  bodyParser     = require("body-parser"),
-  flash          = require("connect-flash"),
-  LocalStrategy  = require("passport-local"),
-  session        = require("express-session"),
-  methodOverride = require("method-override"),
-
-  User           = require("./models/user");
+var mongoose = require("mongoose"),
+    passport = require("passport"),
+    bodyParser = require("body-parser"),
+    flash = require("connect-flash"),
+    LocalStrategy = require("passport-local"),
+    session = require("express-session"),
+    methodOverride = require("method-override"),
+    User = require("./models/user");
 
 var authRoutes = require('./routes/auth'),
     homeRoutes = require('./routes/home'),
@@ -34,7 +35,7 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -57,7 +58,6 @@ app.use(officeRoutes);
 app.use(commentsRoutes);
 app.use(requestsRoutes);
 
-
 mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
@@ -73,17 +73,16 @@ mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
 //   /* other options */
 // });
 // promise.then(function(db) {
-  /* Use `db`, for instance `db.model()`
+/* Use `db`, for instance `db.model()`
 });
 // Or, if you already have a connection
-
-
-
 
 /* ============================            ============================ */
 //ეს ყოველთვის უცვლელია და არის ბოლოში
 
 
-app.listen(process.env.PORT || 3000, process.env.IP,function () {  //if server is on
+app.listen(process.env.PORT || 3000, process.env.IP, function () {
+  //if server is on
   console.log("======STARTED======");
 });
+//# sourceMappingURL=app.js.map

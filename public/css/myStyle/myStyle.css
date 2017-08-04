@@ -180,3 +180,9 @@ textarea {
 .user-del-form {
     margin-bottom: 0;
 }
+
+.text-20 {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}

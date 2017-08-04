@@ -1,9 +1,11 @@
-$(document).ready(function() {
+'use strict';
+
+$(document).ready(function () {
    $('#datatable1').DataTable();
-   $(function() {
+   $(function () {
       $('.travel-date-group .default').datepicker({
          autoclose: true,
-         startDate: "today",
+         startDate: "today"
       });
 
       $('.travel-date-group .today').datepicker({
@@ -13,11 +15,11 @@ $(document).ready(function() {
       });
 
       $('.travel-date-group .past-enabled').datepicker({
-         autoclose: true,
+         autoclose: true
       });
       $('.travel-date-group .format').datepicker({
          autoclose: true,
-         format: "dd-mm-yyyy",
+         format: "dd-mm-yyyy"
       });
 
       $('.travel-date-group .autoclose').datepicker();
@@ -62,10 +64,9 @@ $(document).ready(function() {
          inline: true,
          sideBySide: true
       });
-
    });
 
-   $(function() {
+   $(function () {
       // .daterange1
       // $(".daterange1").daterangepicker({
       //    "buttonClasses": "button button-rounded button-mini nomargin",
@@ -134,35 +135,33 @@ $(document).ready(function() {
       // $(".daterange4").on('cancel.daterangepicker', function(ev, picker) {
       //    $(this).val('');
       // });
-
    });
-   
-    // $('.bt-editable').editable();
 
-  var c1Val;
-  var c2Val;
-  var c3Val;
-  var c4Val;
-  var competencyScore = c1Val + c2Val + c3Val + c4Val;
+   // $('.bt-editable').editable();
 
-  $('#input-c1').on('rating.change', function(event, value, caption) {
-    c1Val = +value;
-  });
+   var c1Val;
+   var c2Val;
+   var c3Val;
+   var c4Val;
+   var competencyScore = c1Val + c2Val + c3Val + c4Val;
 
-  $('#input-c2').on('rating.change', function(event, value, caption) {
-    c2Val = +value;
-  });
+   $('#input-c1').on('rating.change', function (event, value, caption) {
+      c1Val = +value;
+   });
 
-  $('#input-c3').on('rating.change', function(event, value, caption) {
-    c3Val = +value;
-  });
+   $('#input-c2').on('rating.change', function (event, value, caption) {
+      c2Val = +value;
+   });
 
-  $('#input-c4').on('rating.change', function(event, value, caption) {
-    c4Val = +value;
-  });
+   $('#input-c3').on('rating.change', function (event, value, caption) {
+      c3Val = +value;
+   });
 
+   $('#input-c4').on('rating.change', function (event, value, caption) {
+      c4Val = +value;
+   });
 
-   $('#show-links').click(function() {
+   $('#show-links').click(function () {
       $('.links-container').slideToggle("fast");
    });
 
@@ -185,36 +184,34 @@ $(document).ready(function() {
       uploadIcon: "<i class=\"icon-upload\"></i> "
    });
 
-//    // modal part
-// // Get the modal
-//    var modal = document.getElementById('myModal');
-//
-// // Get the button that opens the modal
-//    var btn = document.getElementById("myBtn");
-//
-// Get the <span> element that closes the modal
-//    var span = document.getElementsByClassName("close")[0];
-//
-// // When the user clicks on the button, open the modal
-//    btn.onclick = function() {
-//       modal.style.display = "block";
-//    };
-//
-//
-// // When the user clicks anywhere outside of the modal, close it
-//    window.onclick = function(event) {
-//       if (event.target == modal) {
-//          modal.style.display = "none";
-//       }
-//    }
+   //    // modal part
+   // // Get the modal
+   //    var modal = document.getElementById('myModal');
+   //
+   // // Get the button that opens the modal
+   //    var btn = document.getElementById("myBtn");
+   //
+   // Get the <span> element that closes the modal
+   //    var span = document.getElementsByClassName("close")[0];
+   //
+   // // When the user clicks on the button, open the modal
+   //    btn.onclick = function() {
+   //       modal.style.display = "block";
+   //    };
+   //
+   //
+   // // When the user clicks anywhere outside of the modal, close it
+   //    window.onclick = function(event) {
+   //       if (event.target == modal) {
+   //          modal.style.display = "none";
+   //       }
+   //    }
 
 
-
-
-  document.getElementsByClassName("close").addEventListener('click', myFunc)
+   document.getElementsByClassName("close").addEventListener('click', myFunc);
 
    function myFunc() {
-      document.getElementsByClassName('alert').style.display = "none"
+      document.getElementsByClassName('alert').style.display = "none";
    }
-
 });
+//# sourceMappingURL=myJs.js.map
