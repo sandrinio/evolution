@@ -102,7 +102,7 @@ router.post('/upload_photos', function (req, res){
 
       // Check the file type, must be either png,jpg or jpeg
       if (type !== null && (type.ext === 'png' || type.ext === 'jpg' || type.ext === 'jpeg')) {
-         // Assign new file name
+            // Assign new file name
          filename = Date.now() + '-' + file.name;
 
          // Move the file with the new file name

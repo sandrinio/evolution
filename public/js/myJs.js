@@ -209,12 +209,4 @@ $(document).ready(function() {
 //    }
 
 
-
-
-  document.getElementsByClassName("close").addEventListener('click', myFunc)
-
-   function myFunc() {
-      document.getElementsByClassName('alert').style.display = "none"
-   }
-
 });

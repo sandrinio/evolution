@@ -60,8 +60,8 @@ app.use(requestsRoutes);
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
-// // mongoose.connect("mongodb://localhost/gsm_guru");
+// mongoose.connect("mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop");
+mongoose.connect("mongodb://localhost/geohub");
 // Using `mongoose.connect`...
 // var promise = mongoose.connect('mongodb://gshops:pachuchi123@ds141351.mlab.com:41351/g-shop', {
 //   useMongoClient: true,

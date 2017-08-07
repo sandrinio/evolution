@@ -4,16 +4,18 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/dist/routes/auth.js" />
         <item url="file://$PROJECT_DIR$/dist/routes/requests.js" />
-        <item url="file://$PROJECT_DIR$/dist/routes/home.js" />
         <item url="file://$PROJECT_DIR$/dist/app.js" />
+        <item url="file://$PROJECT_DIR$/dist/routes/home.js" />
+        <item url="file://$PROJECT_DIR$/dist/public/js/photo_upload.js" />
         <item url="file://$PROJECT_DIR$/dist/public/js/myJs.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/dist/routes/auth.js" />
       <root url="file://$PROJECT_DIR$/dist/routes/requests.js" />
-      <root url="file://$PROJECT_DIR$/dist/routes/home.js" />
       <root url="file://$PROJECT_DIR$/dist/app.js" />
+      <root url="file://$PROJECT_DIR$/dist/routes/home.js" />
+      <root url="file://$PROJECT_DIR$/dist/public/js/photo_upload.js" />
       <root url="file://$PROJECT_DIR$/dist/public/js/myJs.js" />
     </CLASSES>
     <SOURCES />

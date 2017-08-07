@@ -59,7 +59,3 @@ typings/
 # dotenv environment variables file
 .env
 
-
-/models/
-/public/uploads/blogUploads/
-/public/uploads/userPictures/
