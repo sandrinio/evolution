@@ -5,28 +5,6 @@
     <div class="content-wrap">
         <div class="container clearfix">
             <div class="content-wrap">
-                <button class="button button-small" id="show-upload-div">ატვირთე</button>
-                <div id="collapsable">
-                    Photos upload Form
-                    <form id="upload-photos" method="post" action="/upload_photos" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="photos-input">File input</label>
-                            <input id="photos-input" type="file" name="photos[]" multiple="multiple" >
-                        </div>
-                        <input type="hidden" name="csrf_token" value="just_a_text_field" />
-                        <input class="btn btn-warning" type="submit" name="Photo Uploads" value="Upload Photos" />
-                    </form>
-                    <div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped active"
-                                 role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                <span class="sr-only"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Photos Album Container -->
-                    <div id="album"></div>
-                </div>
 
                 <form action="/request/<%= result._id %>/edit?_method=PUT" method="POST">
                     <div class="col-md-6" id="margin-bot">
@@ -37,6 +15,7 @@
                     <div class="col-md-3" id="margin-bot">
                         <label for="new-post-text">სტატუსი:</label>
                         <select class="selectpicker" name="status">
+                            <option><%= result.status %></option>
                             <option>Unsolved</option>
                             <option>Solved</option>
                             <option>Instruction</option>
@@ -58,7 +37,7 @@
                     </div>
 
                     <div class="clear"></div>
-                    <textarea name="nPost[content]"><%- result.content %></textarea>
+                    <textarea name="nPost[content]" id="editor1"><%- result.content %></textarea>
                     <script>
                        CKEDITOR.replace('nPost[content]');
                     </script>

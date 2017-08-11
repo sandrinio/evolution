@@ -5,29 +5,6 @@
     <div class="content-wrap">
             <div class="container clearfix">
                 <div class="content-wrap">
-                <button class="button button-small" id="show-upload-div">Pic Upload</button>
-                    <div id="collapsable">
-                         Photos upload Form
-                        <form id="upload-photos" method="post" action="/upload_photos" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="photos-input">File input</label>
-                                <input id="photos-input" type="file" name="photos[]" multiple="multiple" >
-                            </div>
-                            <input type="hidden" name="csrf_token" value="just_a_text_field" />
-                            <button class="btn btn-warning" type="submit" name="Photo Uploads">Upload Photos</button>
-                        </form>
-                        <div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped active"
-                                     role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                    <span class="sr-only"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Photos Album Container -->
-                        <div id="album"></div>
-                    </div>
-
                     <form action="/home/new-content" method="POST">
                         <div class="col-md-6" id="margin-bot">
                             <label for="new-post-text">სათაური:</label>
@@ -57,9 +34,9 @@
                             </div>
 
                              <div class="clear"></div>
-                        <textarea name="nPost[content]"></textarea>
+                        <textarea name="nPost[content]" id="editor1"></textarea>
                         <script>
-                           CKEDITOR.replace('nPost[content]');
+                           CKEDITOR.replace('editor1');
                         </script>
                             <button class="button button-3d button-rounded button-purple">
                                 <i class="icon-ok"></i>

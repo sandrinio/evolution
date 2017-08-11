@@ -186,3 +186,7 @@ textarea {
     margin: auto;
     text-align: center;
 }
+
+.section-gray {
+    background-color: #b6b6b6;
+}

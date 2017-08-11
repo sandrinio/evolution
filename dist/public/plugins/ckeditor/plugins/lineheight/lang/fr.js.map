@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../../../public/plugins/ckeditor/plugins/lineheight/lang/fr.js"],"names":["CKEDITOR","plugins","setLang","title"],"mappings":";;AAAAA,SAASC,OAAT,CAAiBC,OAAjB,CAAyB,YAAzB,EAAsC,IAAtC,EAA4C;AACxCC,WAAO;AADiC,CAA5C","file":"fr.js","sourcesContent":["CKEDITOR.plugins.setLang('lineheight','fr', {\n    title: 'Hauteur de Ligne'\n} );\n"]}

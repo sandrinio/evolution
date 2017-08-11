@@ -4,11 +4,22 @@ var Posts = require('../models/post');
 var User = require('../models/user');
 var path = require('path');
 var middleware = require('../middleware');
-var fs             = require('fs'),
-    formidable     = require('formidable'),
-    readChunk      = require('read-chunk'),
-    fileType       = require('file-type');
-var mailer         = require('../middleware/mails')
+var mailer         = require('../middleware/mails');
+let multer = require('multer');
+
+const storage = multer.diskStorage({
+   destination: function (req, file, cb) {
+      cb(null, 'public/uploads/blogUploads/')
+   },
+   filename: function (req, file, cb) {
+      let tempName = Date.now() + "-" + file.originalname;
+      cb(null, tempName);
+      imageName.imgName = tempName;
+   }
+});
+const upload = multer({ storage: storage });
+
+let imageName = {};
 
 
 
@@ -18,10 +29,9 @@ router.get('/home', middleware.isLoggedIn, function (req, res) {
       if(err){
          return req.flash('error', err)
       }
-
       res.render('main/home', {
-                           page_name: 'home',
-                           postContent: postContent })
+         page_name: 'home',
+         postContent: postContent })
                      });
 });
 
@@ -74,70 +84,22 @@ router.get('/home/show/:id', middleware.isLoggedIn, middleware.isLoggedIn, funct
 });
 
 
-router.post('/upload_photos', function (req, res){
-   var photos = [],
-       form = new formidable.IncomingForm();
+router.post('/ck_upload', upload.any('editor1'), (req, res) => {
 
-   // Tells formidable that there will be multiple files sent.
-   form.multiples = true;
-   // Upload directory for the images
-   form.uploadDir = path.join(__dirname, '../public/uploads/blogUploads/');
+   // console.log(imageName.imgName)
 
-   // Invoked when a file has finished uploading.
-   form.on('file', function (name, file) {
-      // Allow only 3 files to be uploaded.
-      if (photos.length === 3) {
-         fs.unlink(file.path);
-         return true;
-      }
+   // res.send('/upload/basic_uploads/' + imageName.imgName)
 
-      var buffer = null,
-          type = null,
-          filename = '';
+   html = "";
+   html += "<script type='text/javascript'>";
+   html += "    var funcNum = " + req.query.CKEditorFuncNum + ";";
+   html += "    var url     = \"/uploads/blogUploads/" + imageName.imgName + "\";";
+   html += "    var message = \"Uploaded file successfully\";";
+   html += "";
+   html += "    window.parent.CKEDITOR.tools.callFunction(funcNum, url, message);";
+   html += "</script>";
 
-      // Read a chunk of the file.
-      buffer = readChunk.sync(file.path, 0, 262);
-      // Get the file type using the buffer read using read-chunk
-      type = fileType(buffer);
-
-      // Check the file type, must be either png,jpg or jpeg
-      if (type !== null && (type.ext === 'png' || type.ext === 'jpg' || type.ext === 'jpeg')) {
-            // Assign new file name
-         filename = Date.now() + '-' + file.name;
-
-         // Move the file with the new file name
-         fs.rename(file.path, path.join(__dirname, '../public/uploads/blogUploads/' + filename));
-
-         // Add to the list of photos
-         photos.push({
-            status: true,
-            filename: filename,
-            type: type.ext,
-            publicPath: '/uploads/blogUploads/' + filename
-         });
-      } else {
-         photos.push({
-            status: false,
-            filename: file.name,
-            message: 'Invalid file type'
-         });
-         fs.unlink(file.path);
-      }
-   });
-
-   form.on('error', function(err) {
-      console.log('Error occurred during processing - ' + err);
-   });
-
-   // Invoked when all the fields have been processed.
-   form.on('end', function() {
-      console.log('All the request fields have been processed.');
-   });
-
-   // Parse the incoming form fields.
-   form.parse(req, function (err, fields, files) {
-      res.status(200).json(photos);
-   });
+   res.send(html);
 });
 
 router.post('/home/new-content', middleware.isLoggedIn, function (req, res) {

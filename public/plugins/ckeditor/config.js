@@ -22,10 +22,8 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 		{ name: 'styles' },
-		{ name: 'colors' },
-    // { name: 'insert', items: ['Image', 'Youtube']}
+		{ name: 'colors' }
 	];
-
 
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
@@ -36,9 +34,8 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
-	config.extraPlugins = 'uploadimage';
-	config.extraPlugins = 'lineheight';
-	config.extraPlugins = 'youtube';
-	config.uploadUrl = '/news/uploads/blogUploads';
-  config.height = 500;
+	config.filebrowserUploadUrl = '/ck_upload';
+  config.extraPlugins = 'font,colorbutton,panelbutton,floatpanel,panel,button,autogrow,justify';
+
+
 };

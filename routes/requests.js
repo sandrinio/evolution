@@ -11,9 +11,9 @@ router.get('/request', middleware.isLoggedIn, (req, res) => {
         }
     
             res.render('requests/reqs', {
-                                          page_name: 'reqs',
-                                          reqsContent: reqsContent  
-                                        });
+               page_name: 'reqs',
+               reqsContent: reqsContent
+            });
     });
 });
 
@@ -34,23 +34,12 @@ router.get('/post/:id/edit', function (req, res) {
 });
 
 router.put('/request/:id/edit', function (req, res) {
-   Post.findByIdAndUpdate(req.params.id, req.body.nPost, function (err, result) {
+   let obj = req.body.nPost;
+   obj.status = req.body.status;
+   Post.findByIdAndUpdate(req.params.id, obj, function (err, result) {
       if(err){
          console.log(err)
       }else{
-         var Options = {
-            from: 'Sandro Suladze',
-            to: 'sandro.suladze@gmail.com',
-            subject: result.title,
-            html: result.content
-         };
-         mailer.transporter.sendMail(Options, function (err, info) {
-            if(error){
-               return console.log(error)
-            }
-            console.log('Mail has been sent');
-            console.log(info)
-         });
          res.redirect('/home/show/' + req.params.id)
       }
    })

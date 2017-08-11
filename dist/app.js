@@ -24,8 +24,7 @@ var authRoutes = require('./routes/auth'),
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: false,
-  cookie: { maxAge: 1800000 }
+  saveUninitialized: false
 }));
 
 app.use(passport.initialize());

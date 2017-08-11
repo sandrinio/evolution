@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../../../public/plugins/ckeditor/plugins/lineheight/lang/ko.js"],"names":["CKEDITOR","plugins","setLang","title"],"mappings":";;AAAAA,SAASC,OAAT,CAAiBC,OAAjB,CAAyB,YAAzB,EAAsC,IAAtC,EAA4C;AACxCC,WAAO;AADiC,CAA5C","file":"ko.js","sourcesContent":["CKEDITOR.plugins.setLang('lineheight','ko', {\n    title: '줄 높이'\n} );\n"]}

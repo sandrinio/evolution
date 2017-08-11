@@ -17,6 +17,7 @@ router.get('/register', function (req, res) {
 router.post('/register', function (req, res) {
   if(req.body.password === req.body.repassword) {
     var userInfo = req.body.user;
+    userInfo.pic = 'avatar.jpg'
     User.register(userInfo, req.body.password, function (err, user) {
       if(err){
         req.flash('error', err)

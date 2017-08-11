@@ -1,123 +1,133 @@
 <% include ../partials/header.ejs %>
+<!-- Page Title
+============================================= -->
+<section id="page-title" class="page-title-pattern">
+
+    <div class="container clearfix">
+        <h1>მოგვარებული საკითხები</h1>
+        <span>აქ არის მოგვარებული პრობლემები</span>
+    </div>
+
+</section><!-- #page-title end -->
 
         
-<div id="page-menu">
-    <div id="page-menu-wrap">
-        <div class="container clearfix">
-            <div class="menu-title">მთავარი <span>გვერდი</span></div>
+<!--<div id="page-menu">-->
+    <!--<div id="page-menu-wrap">-->
+        <!--<div class="container clearfix">-->
+            <!--<div class="menu-title">მთავარი <span>გვერდი</span></div>-->
 
-            <nav>
-                <ul>
-                    <li><a href="#"><div id="show-links">ლინკები</div></a></li>
-                    <li><a href="#"><div>ფორმები</div></a>
-                        <ul>
-                            <li><a href="/home/google-reg" target="_blank"><div>Google</div></a></li>
-                            <li><a href="/home/apple-reg" target="_blank"><div>App Store</div></a></li>
-                        </ul>
-                    </li>
-                    <% if(currentUser.permission === 'Admin') { %>
-                    <li><a href="/register" target="_blank"><div>New User</div></a></li>
-                    <% } %>
-                </ul>
-            </nav>
+            <!--<nav>-->
+                <!--<ul>-->
+                    <!--<li><a href="#"><div id="show-links">ლინკები</div></a></li>-->
+                    <!--<li><a href="#"><div>ფორმები</div></a>-->
+                        <!--<ul>-->
+                            <!--<li><a href="/home/google-reg" target="_blank"><div>Google</div></a></li>-->
+                            <!--<li><a href="/home/apple-reg" target="_blank"><div>App Store</div></a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<% if(currentUser.permission === 'Admin') { %>-->
+                    <!--<li><a href="/register" target="_blank"><div>New User</div></a></li>-->
+                    <!--<% } %>-->
+                <!--</ul>-->
+            <!--</nav>-->
 
-            <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+            <!--<div id="page-submenu-trigger"><i class="icon-reorder"></i></div>-->
 
-        </div>
-    </div>
-</div><!-- #page-menu end -->
-<div class="well">
-    <div class="panel-group links-container container" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        სამუშაო პროგრამები
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-3 links">
-                            <ul class="programLinks">
-                                <li><strong>Billing</strong></li>
-                                <li class="img-circle"><a href="http://10.40.3.25:7001/myshapecsr/jfn" target="_blank">CSR Portal</a></li>
-                                <li class="img-rounded"><a href="http://cssaccess.intra/channel/jfn" target="_blank">CSR Channel</a></li>
-                                <li class="img-rounded"><a href="http://sbms.intra:8888/ps/sbms/shell.html" target="_blank">Peter-Service</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 links">
-                            <ul class="programLinks">
-                                <li><strong>Roaming</strong></li>
-                                <li><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-lailai-subs" target="_blank">Roaming ლაი-ლაი</a></li>
-                                <li><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-geocell-subs" target="_blank">Roaming ჯეოსელი</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 links">
-                            <ul class="programLinks">
-                                <li><strong>Other</strong></li>
-                                <li><a href="http://snserv3.intra/index.php">SMS Log</a></li>
-                                <li><a href="http://4g.ge" target="_blank">Invigo</a></li>
-                                <li><a href="http://terra.intra/pls/idavapps/IFRAMEWORK.main" target="_blank">Switch info</a></li>
-                                <li><a href="http://email.geocell.ge" target="_blank">Geocell Mail</a></li>
-                                <li><a href="http://4g.ge" target="_blank">Phone Installment</a></li>
-                                <li><a href="http://http://phinstallgui2.intra:8080/PhoneInstallmentGui2/?session_id=1809440" target="_blank">4g.ge</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFour">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Tech News
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-3 links">
-                            <ul class="programLinks">
-                                <li><strong>Billing</strong></li>
-                                <li class="img-circle"><a href="http://10.40.3.25:7001/myshapecsr/jfn" target="_blank">CSR Portal</a></li>
-                                <li class="img-rounded"><a href="http://cssaccess.intra/channel/jfn" target="_blank">CSR Channel</a></li>
-                                <li class="img-rounded"><a href="http://sbms.intra:8888/ps/sbms/shell.html" target="_blank">Peter-Service</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 links">
-                            <ul class="programLinks">
-                                <li><strong>Roaming</strong></li>
-                                <li><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-lailai-subs" target="_blank">Roaming ლაი-ლაი</a></li>
-                                <li><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-geocell-subs" target="_blank">Roaming ჯეოსელი</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 links">
-                            <ul class="programLinks">
-                                <li><strong>Other</strong></li>
-                                <li><a href="http://snserv3.intra/index.php">SMS Log</a></li>
-                                <li><a href="http://4g.ge" target="_blank">Invigo</a></li>
-                                <li><a href="http://terra.intra/pls/idavapps/IFRAMEWORK.main" target="_blank">Switch info</a></li>
-                                <li><a href="http://email.geocell.ge" target="_blank">Geocell Mail</a></li>
-                                <li><a href="http://4g.ge" target="_blank">Phone Installment</a></li>
-                                <li><a href="http://http://phinstallgui2.intra:8080/PhoneInstallmentGui2/?session_id=1809440" target="_blank">4g.ge</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>&lt;!&ndash; #page-menu end &ndash;&gt;-->
+<!--<div class="well">-->
+    <!--<div class="panel-group links-container container" id="accordion" role="tablist" aria-multiselectable="true">-->
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading" role="tab" id="headingThree">-->
+                <!--<h4 class="panel-title">-->
+                    <!--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+                        <!--სამუშაო პროგრამები-->
+                    <!--</a>-->
+                <!--</h4>-->
+            <!--</div>-->
+            <!--<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">-->
+                <!--<div class="panel-body">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-3 links">-->
+                            <!--<ul class="programLinks">-->
+                                <!--<li><strong>Billing</strong></li>-->
+                                <!--<li class="img-circle"><a href="http://10.40.3.25:7001/myshapecsr/jfn" target="_blank">CSR Portal</a></li>-->
+                                <!--<li class="img-rounded"><a href="http://cssaccess.intra/channel/jfn" target="_blank">CSR Channel</a></li>-->
+                                <!--<li class="img-rounded"><a href="http://sbms.intra:8888/ps/sbms/shell.html" target="_blank">Peter-Service</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3 links">-->
+                            <!--<ul class="programLinks">-->
+                                <!--<li><strong>Roaming</strong></li>-->
+                                <!--<li><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-lailai-subs" target="_blank">Roaming ლაი-ლაი</a></li>-->
+                                <!--<li><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-geocell-subs" target="_blank">Roaming ჯეოსელი</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3 links">-->
+                            <!--<ul class="programLinks">-->
+                                <!--<li><strong>Other</strong></li>-->
+                                <!--<li><a href="http://snserv3.intra/index.php">SMS Log</a></li>-->
+                                <!--<li><a href="http://4g.ge" target="_blank">Invigo</a></li>-->
+                                <!--<li><a href="http://terra.intra/pls/idavapps/IFRAMEWORK.main" target="_blank">Switch info</a></li>-->
+                                <!--<li><a href="http://email.geocell.ge" target="_blank">Geocell Mail</a></li>-->
+                                <!--<li><a href="http://4g.ge" target="_blank">Phone Installment</a></li>-->
+                                <!--<li><a href="http://http://phinstallgui2.intra:8080/PhoneInstallmentGui2/?session_id=1809440" target="_blank">4g.ge</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading" role="tab" id="headingFour">-->
+                <!--<h4 class="panel-title">-->
+                    <!--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">-->
+                        <!--Tech News-->
+                    <!--</a>-->
+                <!--</h4>-->
+            <!--</div>-->
+            <!--<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">-->
+                <!--<div class="panel-body">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-3 links">-->
+                            <!--<ul class="programLinks">-->
+                                <!--<li><strong>Billing</strong></li>-->
+                                <!--<li class="img-circle"><a href="http://10.40.3.25:7001/myshapecsr/jfn" target="_blank">CSR Portal</a></li>-->
+                                <!--<li class="img-rounded"><a href="http://cssaccess.intra/channel/jfn" target="_blank">CSR Channel</a></li>-->
+                                <!--<li class="img-rounded"><a href="http://sbms.intra:8888/ps/sbms/shell.html" target="_blank">Peter-Service</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3 links">-->
+                            <!--<ul class="programLinks">-->
+                                <!--<li><strong>Roaming</strong></li>-->
+                                <!--<li><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-lailai-subs" target="_blank">Roaming ლაი-ლაი</a></li>-->
+                                <!--<li><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-geocell-subs" target="_blank">Roaming ჯეოსელი</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3 links">-->
+                            <!--<ul class="programLinks">-->
+                                <!--<li><strong>Other</strong></li>-->
+                                <!--<li><a href="http://snserv3.intra/index.php">SMS Log</a></li>-->
+                                <!--<li><a href="http://4g.ge" target="_blank">Invigo</a></li>-->
+                                <!--<li><a href="http://terra.intra/pls/idavapps/IFRAMEWORK.main" target="_blank">Switch info</a></li>-->
+                                <!--<li><a href="http://email.geocell.ge" target="_blank">Geocell Mail</a></li>-->
+                                <!--<li><a href="http://4g.ge" target="_blank">Phone Installment</a></li>-->
+                                <!--<li><a href="http://http://phinstallgui2.intra:8080/PhoneInstallmentGui2/?session_id=1809440" target="_blank">4g.ge</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
     <!-- Content
     ============================================= -->
     <section id="content">
         <div class="content-wrap">
-            <div class="section">
+
                 <div class="container clearfix">
                     <div class="content-wrap">
                                 <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -147,7 +157,7 @@
                                         <td><%= content.author.firstname + " " + content.author.lastname %></td>
                                         <td><%= content.date.toString().slice(0, 21) %></td>
                                         <td><a href="/home/show/<%= content._id %>">More</a><% if(currentUser.permission === 'Admin'){ %>
-                                            <a class="label label-warning" href="/post/:id/edit">Edit</a>
+                                            <a class="label label-warning" href="/post/<%= content._id %>/edit">Edit</a>
                                             <form class="inline-block del-form" action="/home/<%= content._id %>?_method=delete" method="POST"><button class="label label-danger" href="#">Del</button></form> <% } %> </td>
                                     </tr>
                                     <% }) %>
@@ -158,7 +168,7 @@
 
 
                 </div>
-            </div>
+
         </div>
 
     </section><!-- #content end -->
