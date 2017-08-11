@@ -22,7 +22,7 @@ CKEDITOR.editorConfig = function (config) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
-	config.filebrowserUploadUrl = '/ck_upload';
+	config.filebrowserUploadUrl = '/ajax_upload';
 	config.extraPlugins = 'font,colorbutton,panelbutton,floatpanel,panel,button,autogrow,justify';
 };
 //# sourceMappingURL=config.js.map

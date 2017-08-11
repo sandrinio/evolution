@@ -84,7 +84,7 @@ router.get('/home/show/:id', middleware.isLoggedIn, middleware.isLoggedIn, funct
 });
 
 
-router.post('/ck_upload', upload.any('editor1'), (req, res) => {
+router.post('/ajax_upload', upload.any('editor1'), (req, res) => {
 
    // console.log(imageName.imgName)
 

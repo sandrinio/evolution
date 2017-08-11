@@ -82,7 +82,7 @@ router.get('/home/show/:id', middleware.isLoggedIn, middleware.isLoggedIn, funct
    });
 });
 
-router.post('/ck_upload', upload.any('editor1'), function (req, res) {
+router.post('/ajax_upload', upload.any('editor1'), function (req, res) {
 
    // console.log(imageName.imgName)
 
