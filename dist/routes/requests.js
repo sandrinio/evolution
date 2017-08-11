@@ -33,6 +33,19 @@ router.get('/post/:id/edit', function (req, res) {
    });
 });
 
+router.get('/posts/search', function (req, res) {
+   Post.find({ $text: { $search: req.query.q } }, { score: { $meta: "textScore" } }).sort("-date").exec(function (err, data) {
+      if (err) {
+         return console.log(err);
+      }
+      res.render('main/search_results', {
+         postContent: data,
+         dataCount: data.length,
+         page_name: 'none'
+      });
+   });
+});
+
 router.put('/request/:id/edit', function (req, res) {
    var obj = req.body.nPost;
    obj.status = req.body.status;

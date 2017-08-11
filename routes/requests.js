@@ -9,7 +9,7 @@ router.get('/request', middleware.isLoggedIn, (req, res) => {
         if(err){
             return console.log(err)
         }
-    
+
             res.render('requests/reqs', {
                page_name: 'reqs',
                reqsContent: reqsContent
@@ -30,8 +30,24 @@ router.get('/post/:id/edit', function (req, res) {
          })
       }
    })
-
 });
+
+router.get('/posts/search', (req, res) =>{
+   Post.find({$text: { $search: req.query.q }},
+       { score: {$meta: "textScore"}})
+       .sort("-date")
+       .exec(function (err, data) {
+          if(err){
+             return console.log(err)
+          }
+          res.render('main/search_results', {
+             postContent: data,
+             dataCount: data.length,
+             page_name: 'none'
+          })
+       })
+});
+
 
 router.put('/request/:id/edit', function (req, res) {
    let obj = req.body.nPost;

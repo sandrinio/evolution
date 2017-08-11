@@ -60,21 +60,33 @@
                         <li><a href="/logout">Logout <i class="icon-signout"></i></a></li>
                     </ul>
                 </div>
+
                 <% } %>
+
                 <!-- Primary Navigation
                 ============================================= -->
                 <nav id="primary-menu" class="style-3">
                     <ul>
                         <li <% if(page_name === 'instructions'){ %> class="current" <% } %>><a href="/instructions"><div>Knowledge Hub</div></a></li>
-                        <li <% if(page_name === 'home'){ %> class="current" <% } %>><a href="/home"><div>Solved</div></a></li>
+                        <!--<li <% if(page_name === 'home'){ %> class="current" <% } %>><a href="/home"><div>Solved</div></a></li>-->
                         <li <% if(page_name === 'reqs'){ %> class="current" <% } %>><a href="/request"><div>Requests</div></a></li>
                         <li <% if(page_name === 'offices'){ %> class="current" <% } %>><a href="/offices"><div>Offices</div></a></li>
+                        <li <% if(page_name === 'new post'){ %> class="current" <% } %>><a href="/home/new-post"><div>Write a Post</div></a></li>
+
                         <!--<li <% if(page_name === 'quiz'){ %> class="current" <% } %>><a href="/quiz"><div>ტესტი</div></a></li>-->
                         <!--<li <% if(page_name === 'target'){ %> class="current" <% } %>><a href="/target"><div>გეგმა</div></a></li>-->
                         <!--<li <% if(page_name === 'stock'){ %> class="current" <% } %>><a href="/stock"><div>ნაშთი</div></a></li>-->
                         <!--<li <% if(page_name === 'evaluation'){ %> class="current" <% } %>><a href="/evolution"><div>შეფასება</div></a></li>-->
                     </ul>
+                    <div id="top-search">
+                        <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                        <form action="/posts/search" method="get">
+                            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                        </form>
+                    </div><!-- #top-search end -->
+
                 </nav><!-- #primary-menu end -->
+
 
             </div>
 

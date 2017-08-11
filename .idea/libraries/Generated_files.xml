@@ -147,6 +147,7 @@
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/ckeditor.js" />
         <item url="file://$PROJECT_DIR$/dist/models/comment.js" />
+        <item url="file://$PROJECT_DIR$/dist/models/post.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/lang/en.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/wsc/dialogs/wsc_ie.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/wsc/dialogs/wsc.js" />
@@ -587,6 +588,7 @@
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/ckeditor.js" />
       <root url="file://$PROJECT_DIR$/dist/models/comment.js" />
+      <root url="file://$PROJECT_DIR$/dist/models/post.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/lang/en.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/wsc/dialogs/wsc_ie.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/wsc/dialogs/wsc.js" />

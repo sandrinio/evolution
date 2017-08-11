@@ -36,7 +36,7 @@ router.get('/home', middleware.isLoggedIn, function (req, res) {
 });
 
 router.get('/instructions', middleware.isLoggedIn, function (req, res) {
-   Posts.find({'status': 'Instruction'}).sort('date').exec(function (err, postContent) {
+   Posts.find({'status': 'Solved'}).sort('date').exec(function (err, postContent) {
       if(err){
          return req.flash('error', err)
       }
@@ -56,7 +56,7 @@ router.get('/home/google-reg', function (req, res) {
 });
 
 router.get('/home/new-post', function (req, res) {
-   res.render('main/new', { page_name: 'none' });
+   res.render('main/new', { page_name: 'new post' });
 });
 
 router.get('/quiz', function (req, res) {
