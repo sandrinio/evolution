@@ -45,12 +45,9 @@
     ============================================= -->
 
     <header id="header" class="sticky-header">
-
         <div id="header-wrap">
-
             <div class="container clearfix">
-
-                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+                <!--<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>-->
                 <% if(currentUser != undefined || page_name === 'none') { %>
                 <div id="top-account" class="dropdown">
                     <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -63,6 +60,7 @@
 
                 <% } %>
 
+
                 <!-- Primary Navigation
                 ============================================= -->
                 <nav id="primary-menu" class="style-3">
@@ -71,7 +69,6 @@
                         <!--<li <% if(page_name === 'home'){ %> class="current" <% } %>><a href="/home"><div>Solved</div></a></li>-->
                         <li <% if(page_name === 'reqs'){ %> class="current" <% } %>><a href="/request"><div>Requests</div></a></li>
                         <li <% if(page_name === 'offices'){ %> class="current" <% } %>><a href="/offices"><div>Offices</div></a></li>
-                        <li <% if(page_name === 'new post'){ %> class="current" <% } %>><a href="/home/new-post"><div>Write a Post</div></a></li>
 
                         <!--<li <% if(page_name === 'quiz'){ %> class="current" <% } %>><a href="/quiz"><div>ტესტი</div></a></li>-->
                         <!--<li <% if(page_name === 'target'){ %> class="current" <% } %>><a href="/target"><div>გეგმა</div></a></li>-->
