@@ -6,6 +6,7 @@ var path = require('path');
 var middleware = require('../middleware');
 var mailer         = require('../middleware/mails');
 let multer = require('multer');
+let mailText = require('../views/main/mailHtml.ejs');
 
 const storage = multer.diskStorage({
    destination: function (req, file, cb) {
@@ -103,13 +104,31 @@ router.post('/ajax_upload', upload.any('editor1'), (req, res) => {
 });
 
 router.post('/home/new-content', middleware.isLoggedIn, function (req, res) {
-   var postContent = req.body.nPost;
+   //  sending a mail with content
+   let HelperOption = {
+      from: 'geohub',
+      to: 'sandro.suladze@gmail.com',
+      subject: req.body.nPost.title,
+      html: mailText
+   };
+
+   mailer.transporter.sendMail(HelperOption, function (error, info) {
+      if(error){
+         return console.log(error)
+      }
+      console.log(info)
+   });
+
+   // creating object for mongoose model
+   let postContent = req.body.nPost;
    postContent.author = {
       firstname: req.user.firstname,
       lastname: req.user.lastname,
       pic: req.user.pic,
       id: req.user._id
    };
+
+   //i don't know wtf im checking here
       if(req.body.status == undefined){
       postContent.status = 'Unsolved'
       } else {
@@ -117,7 +136,7 @@ router.post('/home/new-content', middleware.isLoggedIn, function (req, res) {
       }
 
    if(postContent.title.length <= 1 && postContent.content <= 1){
-      req.flash('error', 'სათაური ან კონტენტი თავისუფალია');
+      req.flash('error', 'სათაური ან კონტენტი ვერ მოიძებნა');
       res.redirect('back')
    }else{
    Posts.create(postContent, function (err, createdPost) {
@@ -155,3 +174,4 @@ router.delete("/home/:id", middleware.permissionChecker, function (req, res) {
 });
 
 module.exports = router;
+

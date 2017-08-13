@@ -1,0 +1,16 @@
+<table>
+    <tbody>
+        <tr>
+            <td>Title:</td>
+            <td><%= req.body.nPost.title %></td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td><%= req.body.nPost.status %></td>
+        </tr>
+        <tr>
+            <td>Posted By:</td>
+            <td><%= req.user.firstname + " " + req.user.lastname %></td>
+        </tr>
+    </tbody>
+</table>

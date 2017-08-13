@@ -7,11 +7,10 @@ var Post = require('../models/post');
 var mailer = require('../middleware/mails');
 
 router.get('/request', middleware.isLoggedIn, function (req, res) {
-   Post.find({ 'status': '' || 'Unsolved' || 'undefined' }).sort('-date').exec(function (err, reqsContent) {
+   Post.find({ 'status': '' || 'Unsolved' || 'undefined' }).exec(function (err, reqsContent) {
       if (err) {
          return console.log(err);
       }
-
       res.render('requests/reqs', {
          page_name: 'reqs',
          reqsContent: reqsContent

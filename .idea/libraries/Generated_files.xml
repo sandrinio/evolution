@@ -205,6 +205,7 @@
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sl.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sr.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sv.js" />
+        <item url="file://$PROJECT_DIR$/dist/middleware/mails.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/th.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/tr.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/tt.js" />
@@ -646,6 +647,7 @@
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sl.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sr.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sv.js" />
+      <root url="file://$PROJECT_DIR$/dist/middleware/mails.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/th.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/tr.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/tt.js" />

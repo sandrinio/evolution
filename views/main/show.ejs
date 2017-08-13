@@ -14,7 +14,7 @@
 
                     <!-- Entry Title
                     ============================================= -->
-
+                    <div class="well">
                             <div class="entry-title">
                                 <h2><%= result.title %></h2>
                             </div><!-- .entry-title end -->
@@ -37,12 +37,12 @@
                                 <li><a href="/post/<%= result.id %>/edit"><i class="icon-edit"></i>Edit</a></li>
                                 <% } %>
                             </ul><!-- .entry-meta end -->
-
+                    </div>
                             <div class="line"></div>
                                 <%- result.content %>
                             <div class="line"></div>
 
-
+                    <div class="well">
                         <!-- Comments
                         ============================================= -->
                         <div id="comments" class="clearfix">
@@ -72,30 +72,30 @@
                                 <% }) %>
                             </ol><!-- .commentlist end -->
 
-                    <div class="clear"></div>
+                                <div class="clear"></div>
 
-                    <!-- Comment Form
-                    ============================================= -->
-                    <div id="respond" class="clearfix">
+                            <!-- Comment Form
+                            ============================================= -->
+                            <div id="respond" class="clearfix">
 
-                        <h3>დატოვე <span>კომენტარი</span></h3>
+                                <h3>დატოვე <span>კომენტარი</span></h3>
 
-                        <form class="clearfix" action="/home/<%=result._id%>/comments" method="POST" id="commentform">
-                            <div class="clear"></div>
-                            <div class="col_full">
-                                <label for="comment">Comment</label>
-                                <textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
-                            </div>
+                                <form class="clearfix" action="/home/<%=result._id%>/comments" method="POST" id="commentform">
+                                    <div class="clear"></div>
+                                    <div class="col_full">
+                                        <label for="comment">Comment</label>
+                                        <textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
+                                    </div>
 
-                            <div class="col_full nobottommargin">
-                                <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin">Submit Comment</button>
-                            </div>
-                        </form>
-                    </div><!-- #respond end -->
+                                    <div class="col_full nobottommargin">
+                                        <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin">Submit Comment</button>
+                                    </div>
+                                </form>
+                            </div><!-- #respond end -->
 
-                </div><!-- #comments end -->
+                         </div><!-- #comments end -->
 
-            </div>
+                    </div>
 
         </div>
 
