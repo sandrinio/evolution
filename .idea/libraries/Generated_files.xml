@@ -204,8 +204,8 @@
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sq.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sl.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sr.js" />
-        <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sv.js" />
         <item url="file://$PROJECT_DIR$/dist/middleware/mails.js" />
+        <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sv.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/th.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/tr.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/tt.js" />
@@ -441,6 +441,8 @@
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/bs.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/bn.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/ca.js" />
+        <item url="file://$PROJECT_DIR$/dist/quickstart.js" />
+        <item url="file://$PROJECT_DIR$/dist/middleware/nodemailer.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -646,8 +648,8 @@
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sq.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sl.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sr.js" />
-      <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sv.js" />
       <root url="file://$PROJECT_DIR$/dist/middleware/mails.js" />
+      <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/sv.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/th.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/tr.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/font/lang/tt.js" />
@@ -883,6 +885,8 @@
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/bs.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/bn.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/ca.js" />
+      <root url="file://$PROJECT_DIR$/dist/quickstart.js" />
+      <root url="file://$PROJECT_DIR$/dist/middleware/nodemailer.js" />
     </CLASSES>
     <SOURCES />
   </library>

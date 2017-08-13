@@ -1,14 +1,12 @@
 'use strict';
 
-var express = require('express');
-var router = express.Router();
-var Posts = require('../models/post');
-var User = require('../models/user');
-var path = require('path');
-var middleware = require('../middleware');
-var mailer = require('../middleware/mails');
-var multer = require('multer');
-var mailText = require('../views/main/mailHtml.ejs');
+var express = require('express'),
+    router = express.Router(),
+    Posts = require('../models/post'),
+    User = require('../models/user'),
+    middleware = require('../middleware'),
+    mailer = require('../middleware/mails'),
+    multer = require('multer');
 
 var storage = multer.diskStorage({
    destination: function destination(req, file, cb) {
@@ -107,7 +105,7 @@ router.post('/home/new-content', middleware.isLoggedIn, function (req, res) {
       from: 'geohub',
       to: 'sandro.suladze@gmail.com',
       subject: req.body.nPost.title,
-      html: mailText
+      text: 'New Post by ' + req.user.firstname
    };
 
    mailer.transporter.sendMail(HelperOption, function (error, info) {

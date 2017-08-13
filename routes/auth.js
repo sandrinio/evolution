@@ -14,6 +14,7 @@ router.get('/register', function (req, res) {
   res.render('auth/register')
 });
 
+
 router.post('/register', function (req, res) {
   if(req.body.password === req.body.repassword) {
     var userInfo = req.body.user;
