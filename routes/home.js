@@ -104,10 +104,10 @@ router.post('/ajax_upload', upload.any('editor1'), (req, res) => {
 router.post('/home/new-content', middleware.isLoggedIn, function (req, res) {
    //  sending a mail with content
    let HelperOption = {
-      from: 'geohub',
+      from: 'Geohub',
       to: 'sandro.suladze@gmail.com',
-      subject: req.body.nPost.title,
-      text: 'New Post by ' + req.user.firstname
+      subject: `New post by ` + req.user.firstname + ` ` + req.user.lastname,
+      html: `<strong>Title:</strong> ` + req.body.nPost.title +  `<br> <strong>Status: </strong>` + req.body.status + `<br> <strong>TAG:</strong> ` + req.body.nPost.tag
    };
 
    mailer.transporter.sendMail(HelperOption, function (error, info) {
@@ -172,4 +172,5 @@ router.delete("/home/:id", middleware.permissionChecker, function (req, res) {
 });
 
 module.exports = router;
+
 

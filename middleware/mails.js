@@ -1,18 +1,27 @@
 var nodemailer = require('nodemailer');
 
-var mailer = {};
+let mailer = {};
+
+// mailer.transporter = nodemailer.createTransport({
+//       service: 'gmail',
+//       host: 'https://mail.google.com/',
+//       port: 587,
+//       secure: false, // upgrade later with STARTTLS
+//       auth: {
+//          user: 'geocell.cc@gmail.com',
+//          pass: 'kukuruku123'
+//       }
+// });
 
 mailer.transporter = nodemailer.createTransport({
-      service: 'gmail',
-      host: 'https://mail.google.com/',
-      port: 587,
-      secure: false, // upgrade later with STARTTLS
-      auth: {
-         user: 'geocell.cc@gmail.com',
-         pass: 'kukuruku123'
-      }
+   host: 'smtp.gmail.com',
+   port: 465,
+   secure: true, // use SSL
+   auth: {
+      user: 'geocell.cc@gmail.com',
+      pass: 'kukuruku123'
+   }
 });
-
 
 // mailer.HelperOption = {
 //    from: 'Sandro Suladze',
