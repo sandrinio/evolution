@@ -443,6 +443,7 @@
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/ca.js" />
         <item url="file://$PROJECT_DIR$/dist/quickstart.js" />
         <item url="file://$PROJECT_DIR$/dist/middleware/nodemailer.js" />
+        <item url="file://$PROJECT_DIR$/dist/middleware/index.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -887,6 +888,7 @@
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/ca.js" />
       <root url="file://$PROJECT_DIR$/dist/quickstart.js" />
       <root url="file://$PROJECT_DIR$/dist/middleware/nodemailer.js" />
+      <root url="file://$PROJECT_DIR$/dist/middleware/index.js" />
     </CLASSES>
     <SOURCES />
   </library>

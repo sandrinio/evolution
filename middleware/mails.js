@@ -14,12 +14,12 @@ let mailer = {};
 // });
 
 mailer.transporter = nodemailer.createTransport({
-   host: 'smtp.gmail.com',
+   host: 'smtp.zoho.com',
    port: 465,
    secure: true, // use SSL
    auth: {
-      user: 'geocell.cc@gmail.com',
-      pass: 'kukuruku123'
+      user: 'g.hub@geohub.ge',
+      pass: 'Pachuchi321'
    }
 });
 

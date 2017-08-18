@@ -1,7 +1,9 @@
+"use strict";
+
 var middlewareObject = {};
 
 middlewareObject.permissionChecker = function (req, res, next) {
-  if(req.isAuthenticated() && req.user.permission === "Admin"){
+  if (req.isAuthenticated() && req.user.permission === "Admin") {
     next();
   } else {
     req.flash("error", "No permission");
@@ -9,15 +11,14 @@ middlewareObject.permissionChecker = function (req, res, next) {
   }
 };
 
-
 middlewareObject.isLoggedIn = function (req, res, next) {
   if (req.isAuthenticated()) {
     return next();
-  }else{
+  } else {
     req.flash('error', 'You have to be logged in');
-    res.redirect("/")
+    res.redirect("/");
   }
 };
 
-
 module.exports = middlewareObject;
+//# sourceMappingURL=index.js.map
