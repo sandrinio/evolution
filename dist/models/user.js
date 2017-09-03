@@ -1,8 +1,9 @@
+"use strict";
+
 var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 
-
-let UserSchema = new mongoose.Schema({
+var UserSchema = new mongoose.Schema({
       username: String,
       firstname: String,
       lastname: String,
@@ -21,3 +22,4 @@ let UserSchema = new mongoose.Schema({
 UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("User", UserSchema);
+//# sourceMappingURL=user.js.map

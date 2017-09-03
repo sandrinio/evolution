@@ -81,12 +81,8 @@ router.get('/home/show/:id', middleware.isLoggedIn, middleware.isLoggedIn, funct
    });
 });
 
+//ckeditor photo ajax upload
 router.post('/ajax_upload', upload.any('editor1'), function (req, res) {
-
-   // console.log(imageName.imgName)
-
-   // res.send('/upload/basic_uploads/' + imageName.imgName)
-
    html = "";
    html += "<script type='text/javascript'>";
    html += "    var funcNum = " + req.query.CKEditorFuncNum + ";";
@@ -102,7 +98,7 @@ router.post('/ajax_upload', upload.any('editor1'), function (req, res) {
 router.post('/home/new-content', middleware.isLoggedIn, function (req, res) {
    //  sending a mail with content
    var HelperOption = {
-      from: 'g.hub@geohub.ge',
+      from: "'Geohub ' <g.hub@geohub.ge>",
       to: 'sandro.suladze@gmail.com',
       subject: 'New post by ' + req.user.firstname + ' ' + req.user.lastname,
       html: '<strong>Title:</strong> ' + req.body.nPost.title + '<br> <strong>Status: </strong>' + req.body.status + '<br> <strong>TAG:</strong> ' + req.body.nPost.tag

@@ -1,4 +1,4 @@
-var middlewareObject = {};
+let middlewareObject = {};
 
 middlewareObject.permissionChecker = function (req, res, next) {
   if(req.isAuthenticated() && req.user.permission === "Admin"){

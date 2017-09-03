@@ -2,6 +2,7 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/dist/models/user.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/cs.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/da.js" />
         <item url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/cy.js" />
@@ -447,6 +448,7 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/dist/models/user.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/cs.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/da.js" />
       <root url="file://$PROJECT_DIR$/dist/public/plugins/ckeditor/plugins/colorbutton/lang/cy.js" />
