@@ -1,17 +1,17 @@
-var mongoose = require("mongoose");
-var User = require("./user");
+let mongoose = require("mongoose");
+let User = require("./user");
 
-var commentSchema = new mongoose.Schema({
+let commentSchema = new mongoose.Schema({
     text: String,
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
-            },
+        },
             firstname: String,
             lastname: String,
             pic: String
-            },
+    },
     date: {type: Date, default: Date.now}
 });
 
